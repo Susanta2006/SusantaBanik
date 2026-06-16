@@ -1,22 +1,22 @@
 import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite"; // Plugin must be installed
+import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
+import { nitro } from "nitro/vite"; // <--- Add this import
 
 export default defineConfig({
   plugins: [
-    tailwindcss(), // Must be present to process CSS directives
+    tailwindcss(),
     tanstackStart({
       server: { entry: "server" },
     }),
+    nitro(), // <--- Add this plugin here
     viteReact(),
   ],
   resolve: {
-    // Enables native tsconfig paths resolution
     tsconfigPaths: true,
   },
   server: {
-    // Exposes the server to your local network
     host: true,
   },
 });
