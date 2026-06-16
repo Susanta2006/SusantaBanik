@@ -1,0 +1,13 @@
+{
+  "name": "Susanta Banik",
+  "short_name": "Susanta Banik",
+  "description": "Official site of Susanta Banik — AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Student at IIT Jodhpur and Techno College of Engineering Agartala.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f0f10",
+  "theme_color": "#0f0f10",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
