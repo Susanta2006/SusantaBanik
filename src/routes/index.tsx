@@ -11,6 +11,7 @@ export const Route = createFileRoute("/")({
     title: "Susanta Banik | AI/ML Engineer & Data Scientist",
     meta: [
       { property: "og:url", content: "https://susanta-banik.vercel.app/" },
+      { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" }
       { name: "description", content: "Official portfolio of Susanta Banik: AI/ML Engineer, Data Scientist, Full Stack Developer, and Researcher at IIT Jodhpur and Techno College of Engineering Agartala." }
     ],
     links: [
