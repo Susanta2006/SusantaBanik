@@ -159,6 +159,7 @@ const EDUCATION = [
 ];
 
 const INTERNSHIPS = [
+  { role: "AI Intern", org: "IIT KGP via Skill Ladders" },
   { role: "AI/ML Engineer Intern", org: "kayma AI Innovations" },
   { role: "Full Stack Web Developer Intern", org: "Unified Mentors Pvt. Ltd" },
   { role: "Machine Learning Intern", org: "Cognifyz Technologies" },
