@@ -100,8 +100,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#1a1a1a" },
       // Search-engine ownership verification — replace `content` values once
       // codes are issued by Google Search Console and Bing Webmaster Tools.
-      { name: "google-site-verification", content: "REPLACE_WITH_GOOGLE_VERIFICATION_CODE" },
-      { name: "msvalidate.01", content: "REPLACE_WITH_BING_VERIFICATION_CODE" },
+      { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" },
+      { name: "msvalidate.01", content: "CB17D87FD9ADFFBBC69CD726C50C8E99" },
       { property: "og:title", content: "Susanta Banik — AI/ML Engineer & Researcher" },
       {
         property: "og:description",
