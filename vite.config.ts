@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
+
+// @ts-ignore - Bypassing strict type checking for the Vercel deployment engine
 import { nitro } from "nitro/vite";
 
 export default defineConfig({
@@ -11,7 +13,7 @@ export default defineConfig({
       server: { entry: "server" },
     }),
     nitro({
-      preset: "vercel", // <--- THIS is what fixes the 404 error
+      preset: "vercel", 
     }),
     viteReact(),
   ],
