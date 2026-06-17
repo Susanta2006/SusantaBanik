@@ -8,8 +8,14 @@ import { addBreadcrumb, report } from "@/lib/error-reporter";
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    meta: [{ property: "og:url", content: "/" }],
-    links: [{ rel: "canonical", href: "/" }],
+    title: "Susanta Banik | AI/ML Engineer & Data Scientist",
+    meta: [
+      { property: "og:url", content: "https://susanta-banik.vercel.app/" },
+      { name: "description", content: "Official portfolio of Susanta Banik: AI/ML Engineer, Data Scientist, Full Stack Developer, and Researcher at IIT Jodhpur and Techno College of Engineering Agartala." }
+    ],
+    links: [
+      { rel: "canonical", href: "https://susanta-banik.vercel.app/" }
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -20,7 +26,7 @@ export const Route = createFileRoute("/")({
             "@type": "Person",
             "@id": "#susanta-banik",
             name: "Susanta Banik",
-            url: "/",
+            url: "https://susanta-banik.vercel.app/",
             description:
               "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala.",
             jobTitle: [
