@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://susanta-banik.vercel.app/sitemap.xml
