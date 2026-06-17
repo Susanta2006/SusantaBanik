@@ -32,6 +32,7 @@ export const Route = createFileRoute("/")({
             description:
               "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala.",
             jobTitle: [
+              "Student",
               "AI/ML Engineer",
               "Data Scientist",
               "Full Stack Developer",
@@ -43,6 +44,7 @@ export const Route = createFileRoute("/")({
               "Machine Learning",
               "Data Science",
               "Data Analytics",
+              "Researcher",
               "Full Stack Development",
               "Python",
               "TensorFlow",
@@ -52,11 +54,12 @@ export const Route = createFileRoute("/")({
               {
                 "@type": "CollegeOrUniversity",
                 name: "Indian Institute of Technology Jodhpur",
-                url: "https://www.iitj.ac.in/",
+                url: "https://www.iitj.ac.in/", 
               },
               {
                 "@type": "CollegeOrUniversity",
                 name: "Techno College of Engineering Agartala",
+                url: "https://tiaedu.org/",
               },
             ],
             contactPoint: {
@@ -104,16 +107,16 @@ export const Route = createFileRoute("/")({
               },
             ],
             sameAs: [
-              "https://www.linkedin.com/in/susanta-banik",
-              "https://github.com/Susanta2006",
-              "https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en",
-              "https://x.com/SusantaBan21",
-              "https://www.youtube.com/@CodeWithFun-life",
-              "https://www.researchgate.net/profile/Susanta-Banik-4/research",
+              "https://www.linkedin.com/in/susanta-banik/",
+              "https://github.com/Susanta2006/",
+              "https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en/",
+              "https://x.com/SusantaBan21/",
+              "https://www.youtube.com/@CodeWithFun-life/",
+              "https://www.researchgate.net/profile/Susanta-Banik-4/research/",
               "https://hackerrank.com/profile/susanta_company4/",
               "https://leetcode.com/u/Susanta_Banik/",
               "https://codewithfun-devhub.vercel.app/",
-              "https://www.ijsr.net/getabstract.php?paperid=MR251206000138",
+              "https://www.ijsr.net/getabstract.php?paperid=MR251206000138/",
             ],
           },
         }),
