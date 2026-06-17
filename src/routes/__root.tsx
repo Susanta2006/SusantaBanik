@@ -117,6 +117,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Official site of Susanta Banik. AI/ML, Data Science, Full Stack Development, research, and projects.",
       },
+      { name: "linkedin:card", content: "summary_large_image" },
+      { name: "linkedin:title", content: "Susanta Banik — AI/ML Engineer & Researcher" },
+      {
+        name: "linkedin:description",
+        content:
+          "Official site of Susanta Banik. AI/ML, Data Science, Full Stack Development, research, and projects.",
+      },
+      { name: "google:card", content: "summary_large_image" },
+      { name: "google:title", content: "Susanta Banik — AI/ML Engineer & Researcher" },
+      {
+        name: "google:description",
+        content:
+          "Official site of Susanta Banik. AI/ML, Data Science, Full Stack Development, research, and projects.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
