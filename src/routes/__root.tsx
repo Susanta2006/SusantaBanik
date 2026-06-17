@@ -157,7 +157,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@type": "Person",
               "@id": "#susanta-banik",
               name: "Susanta Banik",
-              alternateName: ["Susanta", "Susanta Banik IIT Jodhpur"],
+              alternateName: ["Susanta", "Susanta Banik"],
               url: "/",
               birthDate: "2006-10-20",
               nationality: "Indian",
