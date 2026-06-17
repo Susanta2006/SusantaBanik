@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
-import { nitro } from "nitro/vite"; // <--- This plugin is mandatory
+import { nitro } from "nitro/vite";
 
 export default defineConfig({
   plugins: [
@@ -10,7 +10,9 @@ export default defineConfig({
     tanstackStart({
       server: { entry: "server" },
     }),
-    nitro(), // <--- You must have this
+    nitro({
+      preset: "vercel", // <--- THIS is what fixes the 404 error
+    }),
     viteReact(),
   ],
   resolve: {
