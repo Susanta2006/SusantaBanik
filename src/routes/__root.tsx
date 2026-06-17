@@ -162,7 +162,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@type": "WebSite",
               "@id": "#website",
               name: "Susanta Banik",
-              url: "/",
+              url: "https://susanta-banik.vercel.app/",
               inLanguage: "en",
               author: { "@id": "#susanta-banik" },
               publisher: { "@id": "#susanta-banik" },
@@ -172,7 +172,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@id": "#susanta-banik",
               name: "Susanta Banik",
               alternateName: ["Susanta", "Susanta Banik"],
-              url: "/",
+              url: "https://susanta-banik.vercel.app/",
               birthDate: "2006-10-20",
               nationality: "Indian",
               gender: "Male",
@@ -205,6 +205,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 {
                   "@type": "CollegeOrUniversity",
                   name: "Techno College of Engineering Agartala",
+                  url: "https://tiaedu.org/",
                 },
               ],
               worksFor: {
@@ -226,6 +227,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               ],
               sameAs: [
                 "https://www.linkedin.com/in/susanta-banik",
+                "https://susanta-banik.vercel.app/",
                 "https://github.com/Susanta2006",
                 "https://x.com/SusantaBan21",
                 "https://www.youtube.com/@CodeWithFun-life",
