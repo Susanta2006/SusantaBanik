@@ -203,15 +203,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 },
               ],
               
+              description:
+                "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala. Inventor of QNME-omega, a CPU-RAM Equalizer, that helps to train any large dataset into low specs devices easily.",
               jobTitle: [
+                "Student",
                 "AI/ML Engineer",
                 "Data Scientist",
                 "Full Stack Developer",
                 "Researcher",
+                "Inventor",
+                "Cyber security",
               ],
-              description:
-                "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student at IIT Jodhpur (B.S. Applied AI & Data Science) and Techno College of Engineering Agartala (B.Tech AI & Data Science). Founder of Code with Fun Dev Hub.",
-              
               knowsAbout: [
                 "Artificial Intelligence",
                 "Machine Learning",
