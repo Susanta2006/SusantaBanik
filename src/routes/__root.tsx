@@ -185,6 +185,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               birthDate: "2006-10-20",
               nationality: "Indian",
               gender: "Male",
+              
+              birthPlace: {
+              "@type": "Place",
+              name: "Agartala, Tripura, India",
+              },
+              parent: [
+                {
+                  "@type": "Person",
+                  description: "Father of Susanta Banik",
+                  name: "Mr. Sunil Banik",
+                },
+                {
+                  "@type": "Person",
+                  description: "Mother of Susanta Banik",
+                  name: "Mrs. Sukla Banik",
+                },
+              ],
+              
               jobTitle: [
                 "AI/ML Engineer",
                 "Data Scientist",
@@ -193,18 +211,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               ],
               description:
                 "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student at IIT Jodhpur (B.S. Applied AI & Data Science) and Techno College of Engineering Agartala (B.Tech AI & Data Science). Founder of Code with Fun Dev Hub.",
+              
               knowsAbout: [
                 "Artificial Intelligence",
                 "Machine Learning",
-                "Deep Learning",
                 "Data Science",
                 "Data Analytics",
+                "Researcher",
                 "Full Stack Development",
                 "Python",
                 "TensorFlow",
-                "LLM Agents",
                 "Web Development",
+                "QNME-omega (CPU-RAM Equalizer)",
+                "Algorithm Optimization",
+                "Competitive Programming",
+                "Data Structures and Algorithms (DSA)",
+                "Academic Publishing",
               ],
+              
               alumniOf: [
                 {
                   "@type": "CollegeOrUniversity",
@@ -217,11 +241,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                   url: "https://tiaedu.org/",
                 },
               ],
-              worksFor: {
-                "@type": "Organization",
-                name: "Code with Fun Dev Hub",
-                url: "https://codewithfun-devhub.vercel.app/",
-              },
+              
+              worksFor: [
+                {
+                  "@type": "Organization",
+                  name: "CodeWithFun-life",
+                  description: "Youtube channel of Susanta Banik",
+                  url: "https://www.youtube.com/@CodeWithFun-life/"
+                },
+                {
+                  "@type": "Organization",
+                  name: "CodeWithFun-devhub",
+                  description: "Bookstore of Susanta Banik with affordable price",
+                  url: "https://codewithfun-devhub.vercel.app/"
+                },
+                {
+                  "@type": "Organization",
+                  name: "Campuscopilot",
+                  description: "Education platform of Susanta Banik built for higher studies not for school level students.",
+                },
+              ],
+              
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "Professional inquiries",
