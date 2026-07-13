@@ -28,9 +28,18 @@ export const Route = createFileRoute("/")({
             "@type": "Person",
             "@id": "#susanta-banik",
             name: "Susanta Banik",
+            "image": [
+              "https://susanta-banik.vercel.app/images/susanta-banik-profile.jpg",
+              "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg",
+              "https://susanta-banik.vercel.app/images/susanta-banik-github.jpg",
+              "https://susanta-banik.vercel.app/images/susanta-banik-third.jpg",
+              "https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg",
+              "https://susanta-banik.vercel.app/images/susanta-banik-fifth.jpg",
+              "https://susanta-banik.vercel.app/images/susanta-banik-sixth.jpg",
+            ],
             url: "https://susanta-banik.vercel.app/",
             description:
-              "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala.",
+              "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala. Inventor of QNME-omega, a CPU-RAM Equalizer, that helps to train any large dataset into low specs devices easily.",
             jobTitle: [
               "Student",
               "AI/ML Engineer",
