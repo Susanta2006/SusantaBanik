@@ -1,0 +1,117 @@
+PROPRIETARY LICENSE
+Copyright (c) 2026 Susanta Banik. All Rights Reserved.
+
+Last updated: July 13, 2026
+
+1. OWNERSHIP AND SCOPE
+
+This repository, including but not limited to its source code, architecture,
+design, layout, user interface, written content, biographical text, project
+descriptions, images, photographs, portraits, and all other associated
+files and media (collectively, the "Content"), is the exclusive
+intellectual property of Susanta Banik ("the Owner").
+
+The Content is protected under applicable copyright, personality rights,
+and intellectual property laws. This repository is made publicly visible
+solely to support deployment and hosting of the Owner's personal website,
+and public visibility does not constitute a grant of any license or right
+of use.
+
+2. NO PERMISSION GRANTED
+
+Except as explicitly stated in Section 5 (Permitted Use), no permission,
+license, or right is granted to any person or entity to:
+
+  (a) copy, reproduce, or duplicate any part of the Content;
+  (b) modify, adapt, translate, or create derivative works based on the
+      Content;
+  (c) distribute, publish, sublicense, rent, lease, or transmit the
+      Content, in whole or in part;
+  (d) use the Content for commercial or non-commercial purposes;
+  (e) incorporate the Content, or any portion thereof, into any other
+      project, product, service, or publication;
+  (f) train, fine-tune, or otherwise use the Content to develop machine
+      learning or artificial intelligence models of any kind;
+  (g) remove, alter, or obscure any copyright, trademark, or attribution
+      notices contained within the Content.
+
+Any such use requires prior express written consent from the Owner.
+
+3. PERSONAL AND BIOGRAPHICAL DATA
+
+The images, portraits, biographical text, contact details, professional
+history, and any other personal data contained within this repository
+(collectively, "Personal Data") are provided strictly for display on the
+Owner's official website. The Personal Data:
+
+  (a) may not be extracted, scraped, indexed for republishing, mirrored,
+      or reused in any external database, dataset, directory, or
+      publication;
+  (b) may not be used to create, train, or fine-tune any facial
+      recognition, generative AI, or biometric identification system;
+  (c) may not be used in any manner that implies endorsement, affiliation,
+      or association with any third party, product, or service without
+      the Owner's express written consent;
+  (d) remains subject to the Owner's personality and privacy rights in
+      addition to copyright protections, independent of this license.
+
+4. ACCESS AND HOSTING
+
+This repository may be publicly accessible for the technical purpose of
+enabling deployment, continuous integration, or hosting of the Owner's
+website through third-party platforms (e.g., GitHub, Vercel). Such public
+accessibility is incidental to deployment and does NOT constitute:
+
+  (a) a waiver of any rights described in this license;
+  (b) an implied license to clone, fork, download, or otherwise obtain
+      copies of the Content for any purpose beyond viewing;
+  (c) permission to use any automated tool, bot, crawler, or script to
+      systematically copy or archive the Content.
+
+Cloning, forking, downloading, or archiving this repository for any
+purpose other than the Owner's own deployment workflow is expressly
+prohibited, regardless of whether such action is technically possible
+through the hosting platform.
+
+5. PERMITTED USE
+
+The only uses permitted without prior written consent are:
+
+  (a) viewing the publicly rendered website for personal, non-commercial
+      informational purposes;
+  (b) linking to the website from external sources, provided such links
+      do not misrepresent the Owner or imply false affiliation;
+  (c) automated indexing by legitimate search engine crawlers (e.g.,
+      Googlebot, Bingbot) strictly for the purpose of search indexing,
+      subject to the Owner's robots.txt directives.
+
+6. ENFORCEMENT AND TERMINATION
+
+Any use of the Content in violation of this license automatically
+terminates any implied or incidental permissions granted under Section 4
+or Section 5. The Owner reserves the right to pursue all available legal
+remedies, including but not limited to takedown requests (e.g., DMCA),
+injunctive relief, and claims for damages, against any party found to be
+in violation of this license.
+
+7. DISCLAIMER OF WARRANTY
+
+THE CONTENT IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
+THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE CONTENT OR THE USE OR OTHER
+DEALINGS IN THE CONTENT.
+
+8. GOVERNING LAW
+
+This license shall be governed by and construed in accordance with the
+laws of India, without regard to its conflict of law provisions. Any
+disputes arising under this license shall be subject to the exclusive
+jurisdiction of the courts located in India.
+
+9. CONTACT
+
+For licensing inquiries, permission requests, or reports of unauthorized
+use, please contact the Owner directly through the email:
+Susanta.company4@gmail.com
