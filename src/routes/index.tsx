@@ -552,9 +552,12 @@ function Hero({ age }: { age: number }) {
           Susanta Banik.
           <br />
         </h1>
-        <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
+        <h3 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
           <span className="text-muted-foreground italic">Building intelligence,</span>{" "}
           <span className="text-primary italic">thoughtfully.</span>
+          <br />
+        </h3>
+        <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
           AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher.
           Currently pursuing a dual degree across <strong className="text-foreground font-medium">IIT Jodhpur</strong> and{" "}
           <strong className="text-foreground font-medium">Techno College of Engineering, Agartala</strong> —
