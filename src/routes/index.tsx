@@ -46,8 +46,45 @@ export const Route = createFileRoute("/")({
               "Data Scientist",
               "Full Stack Developer",
               "Researcher",
+              "Inventor",
+              "Cyber security",
             ],
             birthDate: "2006-10-20",
+            birthPlace: {
+            "@type": "Place",
+            name: "Agartala, Tripura, India",
+            },
+            parent: [
+              {
+                "@type": "Person",
+                description: "Father of Susanta Banik",
+                name: "Mr. Sunil Banik",
+              },
+              {
+                "@type": "Person",
+                description: "Mother of Susanta Banik",
+                name: "Mrs. Sukla Banik",
+              },
+            ],
+            memberOf: [
+              {
+                "@type": "Organization",
+                name: "CodeWithFun-life",
+                description: "Youtube channel of Susanta Banik",
+                url: "https://www.youtube.com/@CodeWithFun-life/"
+              },
+              {
+                "@type": "Organization",
+                name: "CodeWithFun-devhub",
+                description: "Bookstore of Susanta Banik with affordable price",
+                url: "https://codewithfun-devhub.vercel.app/"
+              },
+              {
+                "@type": "Organization",
+                name: "Campuscopilot",
+                description: "Education platform of Susanta Banik built for higher studies not for school level students.",
+              },
+            ],
             knowsAbout: [
               "Artificial Intelligence",
               "Machine Learning",
@@ -58,6 +95,11 @@ export const Route = createFileRoute("/")({
               "Python",
               "TensorFlow",
               "Web Development",
+              "QNME-omega (CPU-RAM Equalizer)",
+              "Algorithm Optimization",
+              "Competitive Programming",
+              "Data Structures and Algorithms (DSA)",
+              "Academic Publishing",
             ],
             alumniOf: [
               {
@@ -118,14 +160,14 @@ export const Route = createFileRoute("/")({
             sameAs: [
               "https://www.linkedin.com/in/susanta-banik/",
               "https://github.com/Susanta2006/",
-              "https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en/",
+              "https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en",
               "https://x.com/SusantaBan21/",
               "https://www.youtube.com/@CodeWithFun-life/",
-              "https://www.researchgate.net/profile/Susanta-Banik-4/research/",
+              "https://www.researchgate.net/profile/Susanta-Banik-4/research",
               "https://hackerrank.com/profile/susanta_company4/",
               "https://leetcode.com/u/Susanta_Banik/",
               "https://codewithfun-devhub.vercel.app/",
-              "https://www.ijsr.net/getabstract.php?paperid=MR251206000138/",
+              "https://www.ijsr.net/getabstract.php?paperid=MR251206000138",
             ],
           },
         }),
@@ -509,14 +551,14 @@ function Hero({ age }: { age: number }) {
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
           Susanta Banik.
           <br />
-          <span className="text-muted-foreground italic">Building intelligence,</span>{" "}
-          <span className="text-primary italic">thoughtfully.</span>
         </h1>
         <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <span className="text-muted-foreground italic">Building intelligence,</span>{" "}
+          <span className="text-primary italic">thoughtfully.</span>
           AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher.
           Currently pursuing a dual degree across <strong className="text-foreground font-medium">IIT Jodhpur</strong> and{" "}
           <strong className="text-foreground font-medium">Techno College of Engineering, Agartala</strong> —
-          turning real-world problems into shippable systems.
+          turning real-world problems into shippable systems. Inventor of QNME-omega helps to train any size of dataset without melting RAM and CPU.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <a
@@ -608,35 +650,62 @@ function About() {
         </div>
         <div className="md:col-span-8 space-y-6 text-lg leading-relaxed text-foreground/90">
           <p>
-            Hi, I'm Susanta Banik — an AI/ML Engineer, Data Scientist and Full
-            Stack Developer pursuing a dual degree across IIT Jodhpur's Applied
-            AI &amp; Data Science programme and a B.Tech in AI &amp; Data
-            Science at Techno College of Engineering, Agartala. The two tracks
-            have shaped how I think: one teaches me to reason deeply, the other
-            to ship quickly.
+            Hi, I'm <strong>Susanta Banik</strong>. Born and raised in Agartala, Tripura, to my parents Mr. Sunil Banik and Mrs. Sukla Banik, my journey is rooted in a deep curiosity for computing and innovation. 
+            Today, I am an AI/ML Engineer, Researcher, Data Scientist, and Full Stack Developer dedicated to building complex systems that make a tangible, real-world impact.
           </p>
+          
           <p>
-            My work sits where machine learning meets real products. I move
-            between TensorFlow notebooks, Python services, Power BI dashboards
-            and full stack web applications — comfortable rebuilding the
-            pipeline end-to-end when a problem deserves it. I've built more than
-            twenty projects spanning fraud detection, time-series forecasting,
-            language tools, conversational agents and complete web platforms.
+            I am currently pursuing a rigorous dual-degree path: a B.S. in Applied AI &amp; Data Science at the prestigious <strong>Indian Institute of Technology (IIT) Jodhpur</strong>, alongside a B.Tech in AI &amp; Data Science at <strong>Techno College of Engineering, Agartala</strong>.
+            These parallel tracks shape my core engineering philosophy: one grounds me in deep theoretical reasoning and mathematics, while the other drives me to build and ship robust software quickly.
           </p>
+          
           <p>
-            Alongside academic work I run{" "}
+            My passion lies at the bleeding edge of artificial intelligence. 
+            I am the inventor of <strong>QNME-omega</strong>, a groundbreaking CPU-RAM Equalizer. 
+            This architecture was designed with a clear mission: to democratize AI by enabling the training of massive datasets on low-specification devices, breaking down hardware computing barriers for developers globally.
+            My broader research in algorithm optimization and machine learning is actively published and recognized across platforms like Google Scholar, ResearchGate, and the International Journal of Science and Research (IJSR).
+          </p>
+          
+          <p>
+            Beyond theoretical research, my work sits exactly where machine learning meets real products. 
+            I bridge the gap between complex data models and user-facing applications, moving seamlessly between TensorFlow notebooks, Python microservices, Power BI dashboards, and full-stack web platforms.
+            I have built over twenty end-to-end projects spanning fraud detection, time-series forecasting, natural language tools, and conversational AI agents, Base 1 AGI with human-like understanding. 
+          </p>
+          
+          <p>
+            I also believe heavily in knowledge sharing and giving back to the tech community.
+            I am the founder of <strong>Campuscopilot</strong>, an educational platform tailored specifically for higher-education students, 
+            and I run the <strong>CodeWithFun</strong> ecosystem,  
+            which includes a growing YouTube channel 
+            {" "}
+            <a
+              className="link-underline text-primary"
+              href={YOUTUBE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              (<em>CodeWithFun-life</em>)
+            </a>{" "} 
+            —  youtube channel for students and developers  
+            and an affordable resource bookstore {" "}
             <a
               className="link-underline text-primary"
               href={DEVHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Code with Fun Dev Hub
+              (<em>CodeWithFun-devhub</em>)
             </a>{" "}
             — an affordable online bookstore for students and developers, with
             every book priced to be genuinely accessible. I also take on
             freelance work building apps, websites and AI tools for clients.
           </p>
+          
+          <p>
+            When I am not architecting machine learning pipelines or developing platforms,
+            I am continuously sharpening my Data Structures and Algorithms (DSA) and problem-solving skills through competitive programming on platforms like LeetCode and HackerRank.
+          </p>
+          
         </div>
       </div>
     </section>
