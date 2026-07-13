@@ -10,43 +10,43 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://susanta-banik.vercel.app/susanta-banik-profile.jpg</image:loc>
+      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-profile.jpg</image:loc>
       <image:title>AI/ML Engineer, Researcher, Inventor and Student</image:title>
       <image:caption>Official headshot portrait of Susanta Banik</image:caption>
     </image:image>
     
      <image:image>
-      <image:loc>https://susanta-banik.vercel.app/susanta-banik-linkedin.jpg</image:loc>
+      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg</image:loc>
       <image:title>Susanta Banik - Linkedin Portrait</image:title>
       <image:caption>Linkedin portrait of Susanta Banik</image:caption>
     </image:image>
     
      <image:image>
-      <image:loc>https://susanta-banik.vercel.app/susanta-banik-github.jpg</image:loc>
+      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-github.jpg</image:loc>
       <image:title>Susanta Banik - Github Portrait</image:title>
       <image:caption>Github portrait of Susanta Banik</image:caption>
     </image:image>
 
      <image:image>
-      <image:loc>https://susanta-banik.vercel.app/susanta-banik-third.jpg</image:loc>
+      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-third.jpg</image:loc>
       <image:title>Susanta Banik - Professional Portrait</image:title>
       <image:caption>Susanta Banik in professional attire.</image:caption>
     </image:image>
 
      <image:image>
-      <image:loc>https://susanta-banik.vercel.app/susanta-banik-fourth.jpg</image:loc>
+      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg</image:loc>
       <image:title>Susanta Banik - Kolkata</image:title>
       <image:caption>Susanta Banik visiting the Victoria Memorial.</image:caption>
     </image:image>
 
      <image:image>
-      <image:loc>https://susanta-banik.vercel.app/susanta-banik-fifth.jpg</image:loc>
+      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-fifth.jpg</image:loc>
       <image:title>Susanta Banik - AI Conference Travel</image:title>
       <image:caption>Susanta Banik route to an AI conference.</image:caption>
     </image:image>
 
      <image:image>
-      <image:loc>https://susanta-banik.vercel.app/susanta-banik-sixth.jpg</image:loc>
+      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-sixth.jpg</image:loc>
       <image:title>Susanta Banik - Tech Travel Portrait</image:title>
       <image:caption>Susanta Banik traveling for technology events.</image:caption>
     </image:image>
