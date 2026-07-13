@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Main Homepage -->
+  <url>
+    <loc>https://susanta-banik.vercel.app/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://susanta-banik.vercel.app/susanta-banik-profile.jpg</image:loc>
+      <image:title>AI/ML Engineer, Researcher, Inventor and Student</image:title>
+      <image:caption>Official headshot portrait of Susanta Banik</image:caption>
+    </image:image>
+    
+     <image:image>
+      <image:loc>https://susanta-banik.vercel.app/susanta-banik-linkedin.jpg</image:loc>
+      <image:title>Susanta Banik - Linkedin Portrait</image:title>
+      <image:caption>Linkedin portrait of Susanta Banik</image:caption>
+    </image:image>
+    
+     <image:image>
+      <image:loc>https://susanta-banik.vercel.app/susanta-banik-github.jpg</image:loc>
+      <image:title>Susanta Banik - Github Portrait</image:title>
+      <image:caption>Github portrait of Susanta Banik</image:caption>
+    </image:image>
+
+     <image:image>
+      <image:loc>https://susanta-banik.vercel.app/susanta-banik-third.jpg</image:loc>
+      <image:title>Susanta Banik - Professional Portrait</image:title>
+      <image:caption>Susanta Banik in professional attire.</image:caption>
+    </image:image>
+
+     <image:image>
+      <image:loc>https://susanta-banik.vercel.app/susanta-banik-fourth.jpg</image:loc>
+      <image:title>Susanta Banik - Kolkata</image:title>
+      <image:caption>Susanta Banik visiting the Victoria Memorial.</image:caption>
+    </image:image>
+
+     <image:image>
+      <image:loc>https://susanta-banik.vercel.app/susanta-banik-fifth.jpg</image:loc>
+      <image:title>Susanta Banik - AI Conference Travel</image:title>
+      <image:caption>Susanta Banik route to an AI conference.</image:caption>
+    </image:image>
+
+     <image:image>
+      <image:loc>https://susanta-banik.vercel.app/susanta-banik-sixth.jpg</image:loc>
+      <image:title>Susanta Banik - Tech Travel Portrait</image:title>
+      <image:caption>Susanta Banik traveling for technology events.</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Projects Page -->
+  <url>
+    <loc>https://susanta-banik.vercel.app/projects</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Research Page -->
+  <url>
+    <loc>https://susanta-banik.vercel.app/research</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
