@@ -8,7 +8,7 @@ import { addBreadcrumb, report } from "@/lib/error-reporter";
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    title: "Susanta Banik | AI/ML Engineer & Data Scientist",
+    title: "Susanta Banik | AI Engineer, Researcher & Inventor",
     meta: [
       { property: "og:url", content: "https://susanta-banik.vercel.app" },
       { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" },
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
             ],
             url: "https://susanta-banik.vercel.app",
             description:
-              "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala. Inventor of QNME-omega, a CPU-RAM Equalizer, that helps to train any large dataset into low specs devices easily.",
+              "AI Engineer, Data Scientist, Full Stack Developer, Inventor and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala. Inventor of QNME-omega, a CPU-RAM Equalizer, that helps to train any large dataset into low specs devices easily.",
             jobTitle: [
               "Student",
               "AI/ML Engineer",
