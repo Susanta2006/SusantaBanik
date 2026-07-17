@@ -1013,7 +1013,7 @@ function Archive() {
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-4">AI / ML</p>
+            <p className="eyebrow mb-4">Machine Learning</p>
             <ul className="space-y-2">
               {AIML_PROJECTS.map((p) => (
                 <li key={p} className="border-b border-rule py-2 text-sm hover:text-primary transition">
@@ -1023,7 +1023,7 @@ function Archive() {
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-4">AI / DL</p>
+            <p className="eyebrow mb-4">Deep Learning</p>
             <ul className="space-y-2">
               {AIDL_PROJECTS.map((p) => (
                 <li key={p} className="border-b border-rule py-2 text-sm hover:text-primary transition">
