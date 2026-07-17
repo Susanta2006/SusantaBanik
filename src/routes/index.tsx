@@ -8,7 +8,7 @@ import { addBreadcrumb, report } from "@/lib/error-reporter";
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    title: "Susanta Banik | AI Engineer, Researcher & Inventor",
+    title: "Susanta Banik | AI Engineer Researcher & Inventor",
     meta: [
       { property: "og:url", content: "https://susanta-banik.vercel.app" },
       { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" },
