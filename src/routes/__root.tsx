@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Susanta Banik | AI/ML Engineer, Data Scientist & Full Stack Developer" },
+      { name: "title", content: "Susanta Banik | AI/ML Engineer, Data Scientist, AGI Researcher & Full Stack Developer" },
       {
         name: "description",
         content:
@@ -102,35 +102,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // codes are issued by Google Search Console and Bing Webmaster Tools.
       { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" },
       { name: "msvalidate.01", content: "CB17D87FD9ADFFBBC69CD726C50C8E99" },
-      { property: "og:title", content: "Susanta Banik — AI/ML Engineer & Researcher" },
+      { property: "og:title", content: "Susanta Banik — AI/ML Engineer, AGI Researcher & QNME-omega Inventor" },
       {
         property: "og:description",
         content:
-          "Official site of Susanta Banik. AI/ML, Data Science, Full Stack Development, research, and projects.",
+          "Official site of Susanta Banik, the AGI Researcher, AI/ML engineer, Inventor of QNME & Full Stack developer",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Susanta Banik" },
+      { property: "og:url", content: "https://susanta-banik.vercel.app" },
+
+      // 🌟 OpenGraph Profile Image Properties (LinkedIn uses this)
+      { property: "og:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Susanta Banik — AI Developer Portfolio Preview" },
+      
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Susanta Banik — AI/ML Engineer & Researcher" },
+      { name: "twitter:title", content: "Susanta Banik — AI/ML Engineer, AGI Researcher & QNME-omega Inventor" },
       {
         name: "twitter:description",
         content:
-          "Official site of Susanta Banik. AI/ML, Data Science, Full Stack Development, research, and projects.",
+          "Official site of Susanta Banik, the AGI Researcher, AI/ML engineer, Inventor of QNME & Full Stack developer",
       },
+      { name: "twitter:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg" },
+      
       { name: "linkedin:card", content: "summary_large_image" },
-      { name: "linkedin:title", content: "Susanta Banik — AI/ML Engineer & Researcher" },
+      { name: "linkedin:title", content: "Susanta Banik — AI/ML Engineer, AGI Researcher & QNME-omega Inventor" },
       {
         name: "linkedin:description",
         content:
-          "Official site of Susanta Banik. AI/ML, Data Science, Full Stack Development, research, and projects.",
+          "Official site of Susanta Banik, the AGI Researcher, AI/ML engineer, Inventor of QNME & Full Stack developer",
       },
+      { name: "linkedin:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg" },
+
+      
       { name: "google:card", content: "summary_large_image" },
-      { name: "google:title", content: "Susanta Banik — AI/ML Engineer & Researcher" },
+      { name: "google:title", content: "Susanta Banik — AI/ML Engineer, AGI Researcher & QNME-omega Inventor" },
       {
         name: "google:description",
         content:
-          "Official site of Susanta Banik. AI/ML, Data Science, Full Stack Development, research, and projects.",
+          "Official site of Susanta Banik, the AGI Researcher, AI/ML engineer, Inventor of QNME & Full Stack developer",
       },
+      { name: "google:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-fifth.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -162,7 +176,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@type": "WebSite",
               "@id": "#website",
               name: "Susanta Banik",
-              url: "https://susanta-banik.vercel.app/",
+              url: "https://susanta-banik.vercel.app",
               inLanguage: "en",
               author: { "@id": "#susanta-banik" },
               publisher: { "@id": "#susanta-banik" },
@@ -177,7 +191,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "https://susanta-banik.vercel.app/images/susanta-banik-github.jpg",
               "https://susanta-banik.vercel.app/images/susanta-banik-third.jpg",
               "https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-fifth.jpg",
+              "https://susanta-banik.vercel.app/images/susanta-banik-fifth.png",
               "https://susanta-banik.vercel.app/images/susanta-banik-sixth.jpg",
               ],
               alternateName: ["Susanta", "Susanta Banik"],
@@ -249,13 +263,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                   "@type": "Organization",
                   name: "CodeWithFun-life",
                   description: "Youtube channel of Susanta Banik",
-                  url: "https://www.youtube.com/@CodeWithFun-life/"
+                  url: "https://www.youtube.com/@CodeWithFun-life"
                 },
                 {
                   "@type": "Organization",
                   name: "CodeWithFun-devhub",
                   description: "Bookstore of Susanta Banik with affordable price",
-                  url: "https://codewithfun-devhub.vercel.app/"
+                  url: "https://codewithfun-devhub.vercel.app"
                 },
                 {
                   "@type": "Organization",
@@ -278,14 +292,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               ],
               sameAs: [
                 "https://www.linkedin.com/in/susanta-banik",
-                "https://susanta-banik.vercel.app/",
+                "https://susanta-banik.vercel.app",
                 "https://github.com/Susanta2006",
                 "https://x.com/SusantaBan21",
                 "https://www.youtube.com/@CodeWithFun-life",
                 "https://www.researchgate.net/profile/Susanta-Banik-4/research",
-                "https://hackerrank.com/profile/susanta_company4/",
-                "https://leetcode.com/u/Susanta_Banik/",
-                "https://codewithfun-devhub.vercel.app/",
+                "https://hackerrank.com/profile/susanta_company4",
+                "https://leetcode.com/u/Susanta_Banik",
+                "https://codewithfun-devhub.vercel.app",
                 "https://www.ijsr.net/getabstract.php?paperid=MR251206000138",
               ],
             },
