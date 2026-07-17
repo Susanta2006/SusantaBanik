@@ -1003,9 +1003,39 @@ function Archive() {
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-4">AI / ML &amp; Python</p>
+            <p className="eyebrow mb-4">Python</p>
+            <ul className="space-y-2">
+              {PYTHON_PROJECTS.map((p) => (
+                <li key={p} className="border-b border-rule py-2 text-sm hover:text-primary transition">
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="eyebrow mb-4">AI / ML</p>
             <ul className="space-y-2">
               {AIML_PROJECTS.map((p) => (
+                <li key={p} className="border-b border-rule py-2 text-sm hover:text-primary transition">
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="eyebrow mb-4">AI / DL</p>
+            <ul className="space-y-2">
+              {AIDL_PROJECTS.map((p) => (
+                <li key={p} className="border-b border-rule py-2 text-sm hover:text-primary transition">
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="eyebrow mb-4">Data AnaLytics</p>
+            <ul className="space-y-2">
+              {DATA_ANALYTICS_PROJECTS.map((p) => (
                 <li key={p} className="border-b border-rule py-2 text-sm hover:text-primary transition">
                   {p}
                 </li>
