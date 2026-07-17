@@ -10,13 +10,13 @@ export const Route = createFileRoute("/")({
   head: () => ({
     title: "Susanta Banik | AI/ML Engineer & Data Scientist",
     meta: [
-      { property: "og:url", content: "https://susanta-banik.vercel.app/" },
+      { property: "og:url", content: "https://susanta-banik.vercel.app" },
       { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" },
       { name: "msvalidate.01", content: "CB17D87FD9ADFFBBC69CD726C50C8E99" },
       { name: "description", content: "Official portfolio of Susanta Banik: AI/ML Engineer, Data Scientist, Full Stack Developer, and Researcher at IIT Jodhpur and Techno College of Engineering Agartala." }
     ],
     links: [
-      { rel: "canonical", href: "https://susanta-banik.vercel.app/" }
+      { rel: "canonical", href: "https://susanta-banik.vercel.app" }
     ],
     scripts: [
       {
@@ -34,10 +34,10 @@ export const Route = createFileRoute("/")({
               "https://susanta-banik.vercel.app/images/susanta-banik-github.jpg",
               "https://susanta-banik.vercel.app/images/susanta-banik-third.jpg",
               "https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-fifth.jpg",
+              "https://susanta-banik.vercel.app/images/susanta-banik-fifth.png",
               "https://susanta-banik.vercel.app/images/susanta-banik-sixth.jpg",
             ],
-            url: "https://susanta-banik.vercel.app/",
+            url: "https://susanta-banik.vercel.app",
             description:
               "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala. Inventor of QNME-omega, a CPU-RAM Equalizer, that helps to train any large dataset into low specs devices easily.",
             jobTitle: [
@@ -71,13 +71,13 @@ export const Route = createFileRoute("/")({
                 "@type": "Organization",
                 name: "CodeWithFun-life",
                 description: "Youtube channel of Susanta Banik",
-                url: "https://www.youtube.com/@CodeWithFun-life/"
+                url: "https://www.youtube.com/@CodeWithFun-life"
               },
               {
                 "@type": "Organization",
                 name: "CodeWithFun-devhub",
                 description: "Bookstore of Susanta Banik with affordable price",
-                url: "https://codewithfun-devhub.vercel.app/"
+                url: "https://codewithfun-devhub.vercel.app"
               },
               {
                 "@type": "Organization",
@@ -158,15 +158,15 @@ export const Route = createFileRoute("/")({
               },
             ],
             sameAs: [
-              "https://www.linkedin.com/in/susanta-banik/",
-              "https://github.com/Susanta2006/",
+              "https://www.linkedin.com/in/susanta-banik",
+              "https://github.com/Susanta2006",
               "https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en",
-              "https://x.com/SusantaBan21/",
-              "https://www.youtube.com/@CodeWithFun-life/",
+              "https://x.com/SusantaBan21",
+              "https://www.youtube.com/@CodeWithFun-life",
               "https://www.researchgate.net/profile/Susanta-Banik-4/research",
-              "https://hackerrank.com/profile/susanta_company4/",
-              "https://leetcode.com/u/Susanta_Banik/",
-              "https://codewithfun-devhub.vercel.app/",
+              "https://hackerrank.com/profile/susanta_company4",
+              "https://leetcode.com/u/Susanta_Banik",
+              "https://codewithfun-devhub.vercel.app",
               "https://www.ijsr.net/getabstract.php?paperid=MR251206000138",
             ],
           },
@@ -189,7 +189,7 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/susanta-banik";
 const GOOGLE_SCHOLAR_URL ="https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en";
 const TWITTER_URL = "https://x.com/SusantaBan21";
 const YOUTUBE_URL = "https://www.youtube.com/@CodeWithFun-life";
-const DEVHUB_URL = "https://codewithfun-devhub.vercel.app/";
+const DEVHUB_URL = "https://codewithfun-devhub.vercel.app";
 const PAPER_URL =
   "https://www.ijsr.net/getabstract.php?paperid=MR251206000138";
 
@@ -202,8 +202,8 @@ const PROFILES = [
   { label: "YouTube", href: YOUTUBE_URL },
   { label: "Google Scholar", href: GOOGLE_SCHOLAR_URL },
   { label: "ResearchGate", href: RESEARCHGATE_URL },
-  { label: "HackerRank", href: "https://hackerrank.com/profile/susanta_company4/" },
-  { label: "LeetCode", href: "https://leetcode.com/u/Susanta_Banik/" },
+  { label: "HackerRank", href: "https://hackerrank.com/profile/susanta_company4" },
+  { label: "LeetCode", href: "https://leetcode.com/u/Susanta_Banik" },
 ];
 
 const EDUCATION = [
@@ -220,7 +220,7 @@ const EDUCATION = [
 
 const INTERNSHIPS = [
   { role: "AI Intern", org: "IIT KGP via Skill Ladders" },
-  { role: "AI/ML Engineer Intern", org: "kayma AI Innovations" },
+  { role: "AI/ML Engineer Intern", org: "kyma AI Innovations" },
   { role: "Full Stack Web Developer Intern", org: "Unified Mentors Pvt. Ltd" },
   { role: "Machine Learning Intern", org: "Cognifyz Technologies" },
   { role: "Machine Learning Intern", org: "Saiket Systems" },
@@ -251,45 +251,70 @@ const SKILLS = [
 ];
 
 const WEB_PROJECTS = [
-  "School DBMS",
-  "Shopping Website",
-  "Exam Portal",
-  "House Listing Site",
-  "Restaurant Management System",
-  "Digital Panchayat",
-  "Portfolio Website",
-  "Student-Teacher Appointment System",
-  "SOS System",
-  "Custom Calculators",
-  "Greetings Webpage",
+  "Relational DBMS for School Administration",
+  "Full-Stack E-Commerce Store with Payment Integration",
+  "Online Exam Portal with Live Timer & Quiz Engine",
+  "Real Estate Listing App with Location Filtering",
+  "Restaurant Billing & Kitchen Management Dashboard",
+  "Digital Panchayat — Rural Governance Web Portal",
+  "Personal Portfolio & AGI Research Showcase Site",
+  "Student-Teacher Appointment Scheduler",
+  "Aegis — Real-Time SOS Location Tracker App",
+  "Custom Computational Calculators Matrix",
+  "Dynamic Greetings & CSS Animation Showcase Webpage",
+];
+
+const PYTHON_PROJECTS = [
+  "age-calculator — core utility using date-interval calculation logic to parse exact time differences",
+  "calculus-solver — mathematical parsing library engineered to compute derivatives and integrals via node trees",
+  "weather-tool — automation script fetching real-time meteorological JSON payloads from external open APIs",
+  "image-compressor — script using matrix factorization or image processing libraries to optimize file dimensions",
+  "text-typer — automation utility leveraging OS-level keyboard events to simulate live user typing speed",
+  "dictionary-qna — parsing tool querying structural JSON localized dictionaries for definition strings",
+  "task-scheduler — script executing background date-time comparison logic to trigger local file processes",
+  "indian-panchangam — astro-mathematical script computing planetary positions using localized traditional algorithms",
+  "password-hasher — security script utilizing standard crypto modules to apply salts and hash input strings"
 ];
 
 const AIML_PROJECTS = [
-  "Age Calculator",
-  "Calculus Calculator",
-  "Language Translator",
-  "Language Detector",
-  "Weather Detection Tool",
-  "Image Compressor",
-  "Quiz Game with LSTM",
-  "Auto Text Typer",
-  "Credit Card Fraud Detection",
-  "Restaurant Rating Predictor",
-  "Medical Data Analyzer",
-  "Stock Market Predictor (TensorFlow LSTM)",
-  "AI Jarvis — expressive, generative assistant",
+  "house-price-predictor — tabular regression model applying tree-based ensembles to project real estate valuations",
+  "language-detector — text classifier implementing n-gram statistical models to evaluate and identify input string origins",
+  "fraud-detector — anomaly detection pipeline using tabular isolation forests to flag skewed transactional records",
+  "rating-predictor — NLP regression pipeline extracting word-frequency weights to project continuous numerical scores",
+  "medical-data-analyzer — tabular analytics tool running normalization and correlation checks across diagnostic data frames",
+  "restaurant-recommender — recommender engine applying matrix factorization or cosine similarity to rank target entries"
+];
+
+const AIDL_PROJECTS = [
+  "cancer-cell-detector — computer vision network utilizing convolutional layers to classify anomalies in digital biopsy images",
+  "language-translator — sequence-to-sequence translation pipeline using tokenization models and encoder-decoder mechanisms",
+  "handwriting-classifier — computer vision model utilizing convolutional layers to run feature extraction on hand-drawn character arrays",
+  "image-classifier — vision classification network training deep feature matrices to map input pixels to structural label classes",
+  "speech-recognizer — acoustic processing pipeline using neural networks to decode continuous audio wave frequencies into text tokens",
+  "lstm-quiz-game — text generation model leveraging Long Short-Term Memory recurrent layers to construct adaptive trivia layouts",
+  "lstm-stock-forecaster — recurrent sequence network built in TensorFlow to track historical time-series pricing vectors",
+  "archeo-ai — applied AI implementation leveraging OpenAI large language model endpoints and embedding vectors to spot historical anomalies",
+  "jarvis-v9 — custom multi-engine Python cognitive architecture executing synthetic human AGI simulations through persistent memory streams"
+];
+
+const DATA_ANALYTICS_PROJECTS = [
+  "sales-performance-dashboard — PowerBI dashboard utilizing advanced DAX modeling to track regional revenue trends and margins",
+  "sales-report-dashboard — Tableau workbook to showcase sales over time, profit-loss, regional contributions, discounts, profits",
+  "supply-chain-analytics — Tableau workbook implementing interactive ETL pipelines to isolate warehouse bottleneck metrics",
+  "customer-churn-bi — PowerBI executive screen integrating cohort analysis and retention metrics from relational database feeds",
 ];
 
 const CERTS = [
-  { name: "IBM — Hadoop", issuer: "IBM" },
-  { name: "IBM — Spark", issuer: "IBM" },
-  { name: "ISRO — Remote Sensing & AI", issuer: "ISRO" },
-  { name: "Google Data Analytics", issuer: "Google / Coursera" },
-  { name: "Machine Learning with Python", issuer: "IBM / Coursera" },
-  { name: "Deep Learning Specialization", issuer: "DeepLearning.AI" },
-  { name: "TensorFlow Developer Essentials", issuer: "Google" },
-  { name: "SQL for Data Science", issuer: "UC Davis / Coursera" },
-  { name: "Generative AI Fundamentals", issuer: "Microsoft" },
+  { name: "Geodata Processing using Python and Machine Learning", issuer: "ISRO (Indian Space Research Organization)" },
+  { name: "Application of AI/ML for Specific Crop Acreage Mapping", issuer: "ISRO (Indian Space Research Organization)" },
+  { name: "A-Z Ethical Hacking Certificate", issuer: "IIT Patna" },
+  { name: "JavaScript Specialist Certification", issuer: "HackerRank" },
+  { name: "SQL (Advance)", issuer: "HackerRank" },
+  { name: "Software Engineer Intern Certificate", issuer: "HackerRank" },
+  { name: "AI Essentials Microsoft Azure Professional Certificate", issuer: "Microsoft" },
+  { name: "Introduction to Generative AI", issuer: "Google Cloud Skills Boost" },
+  { name: "Hadoop 101", issuer: "IBM" },
+  { name: "TATA Gen AI Powered Data Analytics", issuer: "Forage" }
 ];
 
 const SERVICES = [
