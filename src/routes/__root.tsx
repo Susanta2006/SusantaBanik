@@ -318,9 +318,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Susanta Banik | AI Engineer, Researcher & Inventor</title>
+        <title>Susanta Banik | AI Engineer Researcher & Inventor</title>
         <HeadContent />
         <script
           type="text/javascript"
