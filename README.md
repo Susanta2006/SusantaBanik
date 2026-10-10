@@ -14,7 +14,7 @@ My work lives where deep machine learning models meet robust, scalable full-stac
 ### **📊 My Track Record at a Glance**
 
 🚀 19 Years Old           🎓 2 Concurrent Degrees      💻 20+ Shipped Projects  
-📝 2 Research Papers      📜 30+ Tech Certifications   ⚡ 4 Completed Internships
+📝 2 Research Papers      📜 30+ Tech Certifications   ⚡ 5 Completed Internships
 
 ### **🛠️ Tech Stack & Tooling**
 
@@ -25,7 +25,7 @@ My work lives where deep machine learning models meet robust, scalable full-stac
 * **A Continual-Learning Synthetic AGI Agent with Emergent Social Intelligence**  
 * *Scope:* Synthesizing self-improving, continual learning loops in minimalist conversational interfaces. Built to test emergent behaviors in synthetic social environments.
 
-#### **🎓 [CampusCopilot AI](https://susanta-banik.vercel.app/) *(In Active Development)***
+#### **🎓 [CampusCopilot AI](https://vercel.app/) *(In Active Development)***
 
 * **An AI-Native Educational platform built for modern students.**  
 * *Features:* Translates dense, unstructured coursework into clean study maps, dynamic quizzes, and personalized, real-time feedback loops.
@@ -34,6 +34,11 @@ My work lives where deep machine learning models meet robust, scalable full-stac
 
 * **An affordable online bookstore engineered for developers & students.**  
 * *Vision:* Making foundational computer science textbooks and development references highly accessible. Fully responsive web-app designed and maintained by me.
+
+#### **📚 [LabBench](https://labbench-woad.vercel.app/)**
+
+* **A Progressive Web App & Real-Time Code Execution IDE with multi-language compilation support**  
+* *Vision:* LabBench was created to make common programming-lab work less fragmented and more approachable.
 
 ### **📝 Academic Publications**
 
