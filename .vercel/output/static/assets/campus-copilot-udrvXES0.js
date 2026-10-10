@@ -1,0 +1,1 @@
+var e=`/assets/campus-copilot-BQHmZVJr.jpg`;export{e as t};
