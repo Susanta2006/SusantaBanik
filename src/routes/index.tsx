@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import devhubImage from "@/assets/devhub.png";
+import labbenchImage from "@/assets/labbench.png";
 import campuscopilotImage from "@/assets/campus-copilot.jpg";
 import { findCachedAnswer, rememberAnswer } from "@/lib/jarvis-cache";
 import { addBreadcrumb, report } from "@/lib/error-reporter";
@@ -183,15 +184,14 @@ export const Route = createFileRoute("/")({
 /* ---------------- Constants ---------------- */
 
 const GITHUB_URL = "https://github.com/Susanta2006";
-const RESEARCHGATE_URL =
-  "https://www.researchgate.net/profile/Susanta-Banik-4/research";
+const RESEARCHGATE_URL = "https://www.researchgate.net/profile/Susanta-Banik-4/research";
 const LINKEDIN_URL = "https://www.linkedin.com/in/susanta-banik";
 const GOOGLE_SCHOLAR_URL ="https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en";
 const TWITTER_URL = "https://x.com/SusantaBan21";
 const YOUTUBE_URL = "https://www.youtube.com/@CodeWithFun-life";
 const DEVHUB_URL = "https://codewithfun-devhub.vercel.app";
-const PAPER_URL =
-  "https://www.ijsr.net/getabstract.php?paperid=MR251206000138";
+const LABBENCH_URL = "https://labbench-woad.vercel.app";
+const PAPER_URL = "https://www.ijsr.net/getabstract.php?paperid=MR251206000138";
 
 /* ---------------- Data ---------------- */
 
@@ -210,7 +210,7 @@ const EDUCATION = [
   {
     school: "Indian Institute of Technology, Jodhpur",
     degree: "B.S. in Applied AI & Data Science",
-    note: "Recognized as IIT Jodhpur Alumnus",
+    //note: "Recognized as IIT Jodhpur Alumnus",
   },
   {
     school: "Techno College of Engineering, Agartala",
@@ -219,7 +219,7 @@ const EDUCATION = [
 ];
 
 const INTERNSHIPS = [
-  { role: "AI Intern", org: "IIT KGP via Skill Ladders" },
+  //{ role: "AI Intern", org: "IIT KGP via Skill Ladders" },
   { role: "AI/ML Engineer Intern", org: "kyma AI Innovations" },
   { role: "Full Stack Web Developer Intern", org: "Unified Mentors Pvt. Ltd" },
   { role: "Machine Learning Intern", org: "Cognifyz Technologies" },
@@ -251,6 +251,7 @@ const SKILLS = [
 ];
 
 const WEB_PROJECTS = [
+  "Progressive Web App & Real-Time Code Execution IDE with multi-language compilation support",
   "Relational DBMS for School Administration",
   "Full-Stack E-Commerce Store with Payment Integration",
   "Online Exam Portal with Live Timer & Quiz Engine",
@@ -259,8 +260,6 @@ const WEB_PROJECTS = [
   "Digital Panchayat — Rural Governance Web Portal",
   "Personal Portfolio & AGI Research Showcase Site",
   "Student-Teacher Appointment Scheduler",
-  "Aegis — Real-Time SOS Location Tracker App",
-  "Custom Computational Calculators Matrix",
   "Dynamic Greetings & CSS Animation Showcase Webpage",
 ];
 
@@ -439,6 +438,7 @@ function Index() {
         <Research />
         <Certifications />
         <DevHub />
+        <LabBench />
         {/* Library section removed */}
         <CampusCopilot />
         <Profiles />
@@ -511,6 +511,14 @@ function Nav({ theme, toggle }: { theme: string; toggle: () => void }) {
                   <p className="text-xs text-muted-foreground">Affordable online bookstore · Live</p>
                 </a>
                 <a
+                  href="#labbench"
+                  onClick={() => setProductsOpen(false)}
+                  className="block rounded-md px-3 py-2 hover:bg-subtle transition"
+                >
+                  <p className="font-display text-foreground">LabBench</p>
+                  <p className="text-xs text-muted-foreground">A lightweight, browser-based IDE and Progressive Web App (PWA) designed for students · Live</p>
+                </a>
+                <a
                   href="#campuscopilot"
                   onClick={() => setProductsOpen(false)}
                   className="block rounded-md px-3 py-2 hover:bg-subtle transition"
@@ -557,6 +565,7 @@ function Nav({ theme, toggle }: { theme: string; toggle: () => void }) {
             <Link to="/projects" onClick={() => setMobileOpen(false)} className="py-1">Projects</Link>
             <p className="eyebrow pt-2">Products</p>
             <a href="#devhub" onClick={() => setMobileOpen(false)} className="py-1 pl-2">Code with Fun Dev Hub</a>
+            <a href="#labbench" onClick={() => setMobileOpen(false)} className="py-1 pl-2">LabBench</a>
             <a href="#campuscopilot" onClick={() => setMobileOpen(false)} className="py-1 pl-2">CampusCopilot AI</a>
             <Link to="/research" onClick={() => setMobileOpen(false)} className="py-1">Research</Link>
             <a href="#contact" onClick={() => setMobileOpen(false)} className="py-1">Contact</a>
@@ -745,7 +754,7 @@ function About() {
 function Snapshot() {
   const items = [
     ["Dual-degree", "IIT Jodhpur + Techno Agartala"],
-    ["Internships", "4 completed"],
+    ["Internships", "5 completed"],
     ["Projects", "20+ shipped"],
     ["Certifications", "30+ earned"],
     ["Publication", "2 indexed paper"],
@@ -1207,6 +1216,57 @@ function DevHub() {
   );
 }
 
+function LabBench() {
+  return (
+    <section id="labbench" className="rule-top">
+      <div className="container-prose py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+        <div className="md:col-span-7">
+          <p className="eyebrow">Product</p>
+          <h2 className="mt-4 font-display text-3xl md:text-5xl">
+            LabBench.
+          </h2>
+          <p className="mt-3 text-primary font-medium">
+            A practical coding workspace for students.
+          </p>
+          <p className="mt-6 text-lg text-muted-foreground max-w-xl">
+            LabBench brings the everyday parts of a programming practical together:
+            a place to write and run code, inspect results, get a useful debugging hint, and keep submission material organized.
+            You can begin working without creating an account;
+            Google Drive is available when you want your workspace backed up to your own account.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href={LABBENCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-md bg-primary px-5 py-2.5 text-sm text-primary-foreground hover:opacity-90 transition"
+            >
+              Browse the LabBench ↗
+            </a>
+          </div>
+        </div>
+        <div className="md:col-span-5">
+          <div className="rounded-xl border border-rule p-8">
+            <img
+              src={labbenchImage}
+              alt="Code with Fun Dev Hub — curated coding resource centre for students and developers"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+            <p className="eyebrow">Status</p>
+              <p className="mt-2 font-display text-2xl">Active</p>
+              <hr className="my-6 border-rule" />
+              <p className="eyebrow">Category</p>
+              <p className="mt-2">Code Execution IDE · Coding tools</p>
+              <hr className="my-6 border-rule" />
+              <p className="eyebrow">Stewardship</p>
+              <p className="mt-2">Designed &amp; built by Susanta Banik</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function CampusCopilot() {
   return (
