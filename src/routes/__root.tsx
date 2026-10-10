@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import appCss from "../styles.css?url";
 import { GlobalErrorBoundary } from "../lib/branded-error-fallback";
 import { installErrorReporter } from "../lib/error-reporter";
+import { ErrorComponentProps } from "@tanstack/react-router";
 
 function NotFoundComponent() {
   return (
@@ -42,10 +43,10 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-
+  
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
