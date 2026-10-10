@@ -845,7 +845,7 @@ function Education() {
               <p className="eyebrow">Degree</p>
               <h3 className="mt-3 font-display text-2xl">{e.degree}</h3>
               <p className="mt-4 text-muted-foreground">{e.school}</p>
-              {e.note && <p className="mt-2 text-sm text-primary">{e.note}</p>}
+              {(e as any).note && <p className="mt-2 text-sm text-primary">{(e as any).note}</p>}
             </article>
           ))}
         </div>
