@@ -13,7 +13,7 @@ My work lives where deep machine learning models meet robust, scalable full-stac
 
 ### **📊 My Track Record at a Glance**
 
-🚀 19 Years Old           🎓 2 Concurrent Degrees      💻 20+ Shipped Projects  
+🚀 20 Years Old           🎓 2 Concurrent Degrees      💻 20+ Shipped Projects  
 📝 2 Research Papers      📜 30+ Tech Certifications   ⚡ 5 Completed Internships
 
 ### **🛠️ Tech Stack & Tooling**
