@@ -5,180 +5,37 @@ import labbenchImage from "@/assets/labbench.png";
 import campuscopilotImage from "@/assets/campus-copilot.jpg";
 import { findCachedAnswer, rememberAnswer } from "@/lib/jarvis-cache";
 import { addBreadcrumb, report } from "@/lib/error-reporter";
+import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Github, Linkedin, GraduationCap, Moon, Sun, FlaskConical, Menu, X, BookOpen, Code2, BrainCircuit, ExternalLink } from "lucide-react";
+import { projects } from "@/data/projects";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    title: "Susanta Banik | AI Engineer Researcher & Inventor",
+    title: "Susanta Banik — AI Engineer, Researcher & Founder",
     meta: [
-      { property: "og:url", content: "https://susanta-banik.vercel.app" },
-      { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" },
-      { name: "msvalidate.01", content: "CB17D87FD9ADFFBBC69CD726C50C8E99" },
-      { name: "description", content: "Official portfolio of Susanta Banik: AI/ML Engineer, Data Scientist, Full Stack Developer, and Researcher at IIT Jodhpur and Techno College of Engineering Agartala." }
+      { name: "description", content: "Portfolio of Susanta Banik: AI/ML engineering, full-stack development, independent research, and practical digital products." },
+      { name: "author", content: "Susanta Banik" },
+      { name: "robots", content: "index,follow,max-image-preview:large" },
+      { name: "theme-color", content: "#030d19" },
+      { property: "og:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
+      { property: "og:description", content: "AI/ML engineer, researcher, and founder focused on practical software and useful AI systems." },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Susanta Banik" },
+      { property: "og:url", content: "https://susanta-banik.vercel.app/" },
+      { property: "og:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [
-      { rel: "canonical", href: "https://susanta-banik.vercel.app" }
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ProfilePage",
-          mainEntity: {
-            "@type": "Person",
-            "@id": "#susanta-banik",
-            name: "Susanta Banik",
-            "image": [
-              "https://susanta-banik.vercel.app/images/susanta-banik-profile.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-github.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-third.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-fifth.png",
-              "https://susanta-banik.vercel.app/images/susanta-banik-sixth.jpg",
-            ],
-            url: "https://susanta-banik.vercel.app",
-            description:
-              "AI Engineer, Data Scientist, Full Stack Developer, Inventor and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala. Inventor of QNME-omega, a CPU-RAM Equalizer, that helps to train any large dataset into low specs devices easily.",
-            jobTitle: [
-              "Student",
-              "AI/ML Engineer",
-              "Data Scientist",
-              "Full Stack Developer",
-              "Researcher",
-              "Inventor",
-              "Cyber security",
-            ],
-            birthDate: "2006-10-20",
-            birthPlace: {
-            "@type": "Place",
-            name: "Agartala, Tripura, India",
-            },
-            parent: [
-              {
-                "@type": "Person",
-                description: "Father of Susanta Banik",
-                name: "Mr. Sunil Banik",
-              },
-              {
-                "@type": "Person",
-                description: "Mother of Susanta Banik",
-                name: "Mrs. Sukla Banik",
-              },
-            ],
-            memberOf: [
-              {
-                "@type": "Organization",
-                name: "CodeWithFun-life",
-                description: "Youtube channel of Susanta Banik",
-                url: "https://www.youtube.com/@CodeWithFun-life"
-              },
-              {
-                "@type": "Organization",
-                name: "CodeWithFun-devhub",
-                description: "Bookstore of Susanta Banik with affordable price",
-                url: "https://codewithfun-devhub.vercel.app"
-              },
-              {
-                "@type": "Organization",
-                name: "Campuscopilot",
-                description: "Education platform of Susanta Banik built for higher studies not for school level students.",
-              },
-            ],
-            knowsAbout: [
-              "Artificial Intelligence",
-              "Machine Learning",
-              "Data Science",
-              "Data Analytics",
-              "Researcher",
-              "Full Stack Development",
-              "Python",
-              "TensorFlow",
-              "Web Development",
-              "QNME-omega (CPU-RAM Equalizer)",
-              "Algorithm Optimization",
-              "Competitive Programming",
-              "Data Structures and Algorithms (DSA)",
-              "Academic Publishing",
-            ],
-            alumniOf: [
-              {
-                "@type": "CollegeOrUniversity",
-                name: "Indian Institute of Technology Jodhpur",
-                url: "https://www.iitj.ac.in/", 
-              },
-              {
-                "@type": "CollegeOrUniversity",
-                name: "Techno College of Engineering Agartala",
-                url: "https://tiaedu.org/",
-              },
-            ],
-            contactPoint: {
-              "@type": "ContactPoint",
-              contactType: "Professional inquiries",
-              url: "/#contact",
-              availableLanguage: ["English", "Bengali", "Hindi"],
-            },
-            makesOffer: [
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "AI / ML Solutions",
-                  description:
-                    "Custom ML models, LLM agents, RAG apps, forecasting and AI features inside existing products.",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Full Stack Web Applications",
-                  description:
-                    "End-to-end websites and web apps — landing pages, dashboards, portals, e-commerce, internal tools.",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Mobile-Ready PWA Development",
-                  description:
-                    "Responsive, installable PWAs and mobile-first builds that feel native on every device.",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Data & Analytics",
-                  description:
-                    "Power BI dashboards, ETL pipelines and statistical reporting.",
-                },
-              },
-            ],
-            sameAs: [
-              "https://www.linkedin.com/in/susanta-banik",
-              "https://github.com/Susanta2006",
-              "https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en",
-              "https://x.com/SusantaBan21",
-              "https://www.youtube.com/@CodeWithFun-life",
-              "https://www.researchgate.net/profile/Susanta-Banik-4/research",
-              "https://hackerrank.com/profile/susanta_company4",
-              "https://leetcode.com/u/Susanta_Banik",
-              "https://codewithfun-devhub.vercel.app",
-              "https://labbench-woad.vercel.app",
-              "https://www.ijsr.net/getabstract.php?paperid=MR251206000138",
-            ],
-          },
-        }),
-      },
-      {
-      type: "text/javascript",
-      children: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xlt1yxwkyt");`
-    },
-    ],
+    links: [{ rel: "canonical", href: "https://susanta-banik.vercel.app/" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({
+      "@context": "https://schema.org", "@type": "ProfilePage",
+      mainEntity: { "@type": "Person", name: "Susanta Banik", url: "https://susanta-banik.vercel.app/",
+        image: "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg",
+        description: "AI/ML engineer, full-stack developer, independent researcher, and founder of Shristi AI Web Creations™.",
+        jobTitle: ["AI/ML Engineer", "Full-Stack Developer", "Independent Researcher", "Founder & Principal AI Engineer"],
+        worksFor: { "@type": "Organization", name: "Shristi AI Web Creations™", url: "https://www.linkedin.com/company/shristi-ai-web-creations/" },
+        sameAs: ["https://github.com/Susanta2006", "https://www.linkedin.com/in/susanta-banik", "https://dev.to/susantabanik", "https://medium.com/@b24bs2374", "https://www.researchgate.net/profile/Susanta-Banik-4", "https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en", "https://hackerrank.com/profile/susanta_company4", "https://leetcode.com/u/Susanta_Banik", "https://x.com/SusantaBan21", "https://www.youtube.com/@CodeWithFun-life"]
+      }
+    }) }],
   }),
 });
 
@@ -397,7 +254,7 @@ function useGithubRepos() {
 function useTheme() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   useEffect(() => {
-    const stored = (typeof window !== "undefined" && localStorage.getItem("theme")) as
+    const stored = (typeof window !== "undefined" ? (() => { try { return localStorage.getItem("theme"); } catch { return null; } })() : null) as
       | "light"
       | "dark"
       | null;
@@ -411,7 +268,7 @@ function useTheme() {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
     document.documentElement.classList.toggle("dark", next === "dark");
-    localStorage.setItem("theme", next);
+    try { localStorage.setItem("theme", next); } catch { /* storage may be unavailable */ }
   };
   return { theme, toggle };
 }
@@ -419,34 +276,76 @@ function useTheme() {
 /* ---------------- Page ---------------- */
 
 function Index() {
-  const age = useMemo(() => calcAge("2006-10-20"), []);
-  const { repos, error } = useGithubRepos();
   const { theme, toggle } = useTheme();
+  const railRef = useRef<HTMLDivElement>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const filters = ["All", "Live", "Research", "In development", "Experimental", "Client product"];
+  const visibleProjects = projects.filter((p) => activeFilter === "All" || p.status === activeFilter);
+  const moveRail = (direction: -1 | 1) => railRef.current?.scrollBy({ left: direction * Math.max(300, (railRef.current.clientWidth || 900) * 0.78), behavior: "smooth" });
+  useEffect(() => {
+    const nodes = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    document.documentElement.classList.add("motion-ready");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      nodes.forEach((node) => node.classList.add("is-visible"));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+    }), { threshold: 0.12 });
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Nav theme={theme} toggle={toggle} />
+    <div className="portfolio-shell">
+      <header className="site-nav">
+        <div className="nav-inner">
+          <a className="brand" href="#home" aria-label="Susanta Banik home"><span className="brand-mark">SB</span><span>Susanta Banik<small>AI · Research · Engineering</small></span></a>
+          <nav className={mobileOpen ? "nav-links nav-open" : "nav-links"} aria-label="Main navigation">
+            <a href="#home" onClick={() => setMobileOpen(false)}>Home</a><a href="#projects" onClick={() => setMobileOpen(false)}>Projects</a><a href="#research" onClick={() => setMobileOpen(false)}>Research</a><a href="#about" onClick={() => setMobileOpen(false)}>About</a><a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
+          </nav>
+          <div className="nav-actions"><button className="theme-toggle" onClick={toggle} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>{theme === "dark" ? <Sun size={16}/> : <Moon size={16}/>}<span>{theme === "dark" ? "Dark" : "Light"}</span></button><a className="availability" href="#contact"><span/> Available for projects</a><button className="mobile-menu" onClick={() => setMobileOpen(!mobileOpen)} aria-label={mobileOpen ? "Close menu" : "Open menu"}>{mobileOpen ? <X/> : <Menu/>}</button></div>
+        </div>
+      </header>
       <main>
-        <Hero age={age} />
-        <About />
-        <Snapshot />
-        <Services />
-        <Education />
-        <Experience />
-        <Skills />
-        <FeaturedProjects repos={repos} error={error} />
-        <Archive />
-        <Research />
-        <Certifications />
-        <DevHub />
-        <LabBench />
-        {/* Library section removed */}
-        <CampusCopilot />
-        <Profiles />
-        <Contact />
+        <section id="home" className="hero-section">
+          <div className="hero-grid">
+            <div className="hero-copy" data-reveal>
+              <p className="eyebrow"><span>AI ENGINEER</span><i/> <span>RESEARCHER</span><i/> <span>PROBLEM SOLVER</span></p>
+              <h1>Building Intelligence,<br/><span>thoughtfully.</span></h1>
+              <p className="hero-lede">I’m Susanta Banik — an AI/ML engineer and researcher turning ambitious ideas into practical software, experiments, and products.</p>
+              <div className="hero-ctas"><a className="button-primary" href="#projects">Explore my work <ArrowRight size={17}/></a><a className="button-secondary" href="#research"><BookOpen size={16}/> Read my research</a></div>
+              <div className="social-links"><a href={GITHUB_URL} target="_blank" rel="noopener noreferrer"><Github size={17}/> GitHub</a><a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer"><Linkedin size={17}/> LinkedIn</a><a href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer"><GraduationCap size={18}/> Google Scholar</a></div>
+            </div>
+            <div className="hero-visual" aria-label="Portrait of Susanta Banik" data-reveal><div className="portrait-orbit orbit-one"/><div className="portrait-orbit orbit-two"/><div className="portrait-halo"/><img src="/images/susanta-banik-linkedin.jpg" alt="Portrait of Susanta Banik" fetchPriority="high"/><div className="hero-note">“Better systems.<br/>Brighter futures.”</div><div className="hero-specialties"><span>AI / ML</span><span>Research</span><span>Web development</span><span>Product building</span></div></div>
+          </div>
+          <a className="scroll-cue" href="#projects"><span/> Scroll to explore <ArrowDownRight size={15}/></a>
+        </section>
+
+        <section id="projects" className="section-block projects-section">
+          <div className="section-topline"><div><p className="eyebrow accent">Selected work</p><h2>Real solutions for real problems.</h2><p className="section-intro">From AI-powered tools to healthcare and research systems — projects built around practical questions.</p></div><div className="rail-controls"><button aria-label="Previous projects" onClick={() => moveRail(-1)}><ArrowLeft/></button><button aria-label="Next projects" onClick={() => moveRail(1)}><ArrowRight/></button></div></div>
+          <div className="project-filters" aria-label="Filter projects">{filters.map((filter) => <button key={filter} className={activeFilter === filter ? "filter-chip active" : "filter-chip"} onClick={() => setActiveFilter(filter)}>{filter}</button>)}</div>
+          <div className="project-rail" ref={railRef} aria-label="Project carousel" tabIndex={0}>
+            {visibleProjects.map((project) => <article className="project-card" key={project.id}>
+              <div className="project-art">{project.image ? <img className="project-thumb" src={project.image} alt={`${project.name} project preview`} loading="lazy"/> : <><div className="project-art-grid"/><div className="project-icon">{project.category.toLowerCase().includes("research") || project.category.toLowerCase().includes("ai") ? <BrainCircuit size={31}/> : project.category.toLowerCase().includes("developer") ? <Code2 size={31}/> : <FlaskConical size={31}/>}</div></>}<span className={`status-pill status-${project.status.toLowerCase().replaceAll(" ", "-")}`}>{project.status}{project.id === "qnme-omega" || project.id === "campuscopilot" ? " · No public repository" : ""}</span></div>
+              <div className="project-body"><p className="project-category">{project.category}</p><h3>{project.name}</h3><p className="project-summary">{project.summary}</p><div className="tech-tags">{project.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div><div className="project-links">{project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">Visit project <ArrowUpRight size={15}/></a>}{project.publicationUrl && <a href={project.publicationUrl} target="_blank" rel="noopener noreferrer">Research <ArrowUpRight size={15}/></a>}{project.repositoryUrl && <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">GitHub <Github size={14}/></a>}{!project.demoUrl && !project.publicationUrl && !project.repositoryUrl && <span>{project.visibility === "private" ? "Details available on request" : "Repository not yet published"}</span>}</div></div>
+            </article>)}
+          </div><p className="rail-hint">Swipe or scroll horizontally to browse projects. Use the arrows to move through the collection.</p>
+        </section>
+
+        <section id="about" className="section-block about-section"><div className="about-copy" data-reveal><p className="eyebrow accent">About me</p><h2>Turning ideas<br/>into impact.</h2><p>I’m an engineer and researcher interested in AI/ML, full-stack development, and building useful digital products. I enjoy moving between research questions, prototypes, and dependable software.</p><p>My approach is problem-first: understand the constraints, test assumptions, and build systems people can actually use.</p><a className="text-link" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">More about my work <ArrowRight size={15}/></a></div>
+          <div className="about-facts" data-reveal><div className="fact-row"><span className="fact-icon"><GraduationCap/></span><div><b>Education</b><p>B.S. Applied AI & Data Science — IIT Jodhpur<br/>B.Tech, AI & Data Science — Techno College of Engineering, Agartala</p></div></div><div className="fact-row"><span className="fact-icon"><BrainCircuit/></span><div><b>Focus</b><p>AI/ML, LLM applications, research, full-stack engineering, product building</p></div></div><div className="fact-row"><span className="fact-icon"><Code2/></span><div><b>Founder & Principal AI Engineer</b><p>Shristi AI Web Creations™ — a Udyam-registered sole-proprietorship micro enterprise.</p></div></div><div className="fact-row"><span className="fact-icon"><BookOpen/></span><div><b>Languages</b><p>English, Hindi, Bengali</p></div></div></div>
+          <div className="skills-panel" data-reveal><p className="eyebrow">Skills & technologies</p><div className="skill-cloud">{["Python", "JavaScript", "React", "Node.js", "Flask", "Next.js", "TensorFlow", "PyTorch", "MySQL", "MongoDB", "Docker", "Linux", "RAG", "LLM agents", "Data science"].map((s) => <span key={s}>{s}</span>)}</div><div className="founder-note"><span className="founder-mark">S</span><div><b>Shristi AI Web Creations™</b><p>Practical software, AI/ML solutions, LLM applications, and digital products.</p><a href="https://www.linkedin.com/company/shristi-ai-web-creations/" target="_blank" rel="noopener noreferrer">Business profile <ArrowUpRight size={14}/></a></div></div></div>
+        </section>
+
+        <section id="research" className="section-block research-section"><div className="section-topline"><div><p className="eyebrow accent">Research & publications</p><h2>Exploring systems at the edge.</h2><p className="section-intro">Research notes and publications on conversational agents and practical AI systems.</p></div><a className="text-link" href={RESEARCHGATE_URL} target="_blank" rel="noopener noreferrer">View research profile <ArrowRight size={15}/></a></div><div className="research-grid"><a className="research-card" href={PAPER_URL} target="_blank" rel="noopener noreferrer"><span className="paper-icon"><BookOpen/></span><div><p className="eyebrow">IJSR · December 2025</p><h3>Emergent Social Consciousness in a Minimalist Conversational Agent: A Case Study</h3><p>Published paper · Paper ID MR251206000138</p></div><ExternalLink size={16}/></a><a className="research-card" href={RESEARCHGATE_URL} target="_blank" rel="noopener noreferrer"><span className="paper-icon"><BrainCircuit/></span><div><p className="eyebrow">Preprint / research</p><h3>Jarvis-v9: A Continual-Learning Synthetic AI Agent</h3><p>Exploratory work on modular conversational systems and memory concepts.</p></div><ExternalLink size={16}/></a><a className="research-card" href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer"><span className="paper-icon"><GraduationCap/></span><div><p className="eyebrow">Scholar profile</p><h3>Research interests and publications</h3><p>Use the supplied Google Scholar profile to find indexed research.</p></div><ExternalLink size={16}/></a></div></section>
+
+        <section className="contact-banner"><div><p className="eyebrow">Have a project in mind?</p><h2>Let’s build something<br/>useful together.</h2><p>I’m open to collaborations, research opportunities, and thoughtful engineering projects.</p></div><a className="button-primary" href="#contact">Get in touch <ArrowUpRight size={17}/></a></section>
+        <section id="contact" className="contact-section"><div><p className="eyebrow accent">Contact</p><h2>Start a conversation.</h2><p>For projects, research collaboration, or professional enquiries, email me directly or connect through LinkedIn.</p><a className="email-link" href="mailto:susanta.company4@gmail.com">susanta.company4@gmail.com <ArrowUpRight size={16}/></a></div><div className="contact-links"><a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer"><Linkedin/> LinkedIn <ArrowUpRight/></a><a href={GITHUB_URL} target="_blank" rel="noopener noreferrer"><Github/> GitHub <ArrowUpRight/></a><a href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer"><GraduationCap/> Google Scholar <ArrowUpRight/></a><a href="https://dev.to/susantabanik" target="_blank" rel="noopener noreferrer"><ExternalLink/> DEV Community <ArrowUpRight/></a></div></section>
       </main>
       <ChatWidget />
-      <Footer />
+      <footer className="site-footer"><a className="brand" href="#home"><span className="brand-mark">SB</span><span>Susanta Banik<small>Building Intelligence, thoughtfully.</small></span></a><nav><a href="#projects">Projects</a><a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact</a><a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a><a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={RESEARCHGATE_URL} target="_blank" rel="noopener noreferrer">ResearchGate</a><a href={GOOGLE_SCHOLAR_URL} target="_blank" rel="noopener noreferrer">Scholar</a><a href="https://dev.to/susantabanik" target="_blank" rel="noopener noreferrer">DEV</a><a href="https://medium.com/@b24bs2374" target="_blank" rel="noopener noreferrer">Medium</a><a href="https://hackerrank.com/profile/susanta_company4" target="_blank" rel="noopener noreferrer">HackerRank</a><a href="https://leetcode.com/u/Susanta_Banik/" target="_blank" rel="noopener noreferrer">LeetCode</a><a href={TWITTER_URL} target="_blank" rel="noopener noreferrer">X</a><a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.linkedin.com/company/shristi-ai-web-creations/" target="_blank" rel="noopener noreferrer">Shristi AI</a><Link to="/privacy">Privacy</Link><Link to="/terms">Terms</Link></nav><p>© {new Date().getFullYear()} Susanta Banik. All rights reserved.</p></footer>
     </div>
   );
 }
@@ -1359,61 +1258,18 @@ function useContactForm() {
   async function submit(form: HTMLFormElement) {
     setState("sending");
     setMessage("");
-
     const fd = new FormData(form);
-    
-    // 1. Honeypot check for automated spambots
-    const websiteHoneypot = String(fd.get("website") ?? "").trim();
-    if (websiteHoneypot.length > 0) {
-      setState("ok");
-      setMessage("Message sent! I'll reply to your email shortly.");
-      form.reset();
-      return;
+    if (String(fd.get("website") ?? "").trim()) { setState("ok"); setMessage("Thanks."); return; }
+    const name = String(fd.get("name") ?? "").trim();
+    const email = String(fd.get("email") ?? "").trim();
+    const subject = String(fd.get("subject") ?? "Portfolio enquiry").trim();
+    const body = String(fd.get("message") ?? "").trim();
+    if (name.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || body.length < 5) {
+      setState("error"); setMessage("Enter a valid name, email address, and message (at least 5 characters)."); return;
     }
-
-    // 2. Map Payload directly to the Web3Forms API structure
-    const payload = {
-      // ⚠️ Paste your real key string here. Do not leave the placeholder!
-      access_key:"85b50799-228a-4d46-8dec-63c72ca82d95", 
-      name: String(fd.get("name") ?? "").trim(),
-      email: String(fd.get("email") ?? "").trim(),
-      subject: String(fd.get("subject") ?? "New Portfolio Message").trim(),
-      message: String(fd.get("message") ?? "").trim(),
-      replyto: String(fd.get("email") ?? "").trim(),
-    };
-
-    // 3. Client Side Input Field Validation
-    if (!payload.name || payload.message.length < 5) {
-      setState("error");
-      setMessage("Please provide a valid name and a longer message (at least 5 characters).");
-      return;
-    }
-
-    try {
-      // 4. Secure Submission Directly to Web3Forms (Bypasses local /api paths)
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json().catch(() => ({}));
-
-      if (res.ok && data.success) {
-        setState("ok");
-        setMessage("Message sent! I'll reply to your email shortly.");
-        form.reset();
-      } else {
-        setState("error");
-        setMessage(data.message || "Could not complete submission.");
-      }
-    } catch {
-      setState("error");
-      setMessage("Network error. Please check your internet connection.");
-    }
+    const mailto = `mailto:susanta.company4@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${body}`)}`;
+    setState("ok"); setMessage("Opening your email app. The message is not sent until you send it there.");
+    window.location.href = mailto;
   }
 
   return { state, message, submit };
@@ -1488,9 +1344,7 @@ function ContactForm({ compact = false }: { compact?: boolean }) {
         className="w-full rounded-md border border-rule bg-background px-3 py-2.5 text-sm focus:outline-none focus:border-primary transition resize-none"
       />
       <p className="text-[11px] text-muted-foreground leading-relaxed">
-        🔒 Your message is sent over HTTPS to a private server route and forwarded
-        only to my personal inbox. Your email is used solely to reply — never
-        stored, shared, or added to any list.
+        Your message opens in your email application. Nothing is sent automatically; review and send it from your email app.
       </p>
       <div className="flex items-center justify-between gap-3 flex-wrap">
         <button

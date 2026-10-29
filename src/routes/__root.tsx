@@ -90,11 +90,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "title", content: "Susanta Banik | AI/ML Engineer, Data Scientist, AGI Researcher & Full Stack Developer" },
+      { name: "title", content: "Susanta Banik | AI Engineer, Researcher & Founder" },
       {
         name: "description",
         content:
-          "Official website of Susanta Banik — AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student at IIT Jodhpur and Techno College of Engineering Agartala.",
+          "Portfolio of Susanta Banik — AI/ML engineer, full-stack developer, independent researcher, and founder of Shristi AI Web Creations™.",
       },
       { name: "author", content: "Susanta Banik" },
       { name: "robots", content: "index,follow,max-image-preview:large" },
@@ -103,11 +103,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // codes are issued by Google Search Console and Bing Webmaster Tools.
       { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" },
       { name: "msvalidate.01", content: "CB17D87FD9ADFFBBC69CD726C50C8E99" },
-      { property: "og:title", content: "Susanta Banik — AI/ML Engineer, AGI Researcher & QNME-omega Inventor" },
+      { property: "og:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
       {
         property: "og:description",
         content:
-          "Official site of Susanta Banik, the AGI Researcher, AI/ML engineer, Inventor of QNME & Full Stack developer",
+          "AI/ML engineering, full-stack development, independent research, and practical digital products.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Susanta Banik" },
@@ -120,30 +120,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image:alt", content: "Susanta Banik — AI Developer Portfolio Preview" },
       
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Susanta Banik — AI/ML Engineer, AGI Researcher & QNME-omega Inventor" },
+      { name: "twitter:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
       {
         name: "twitter:description",
         content:
-          "Official site of Susanta Banik, the AGI Researcher, AI/ML engineer, Inventor of QNME & Full Stack developer",
+          "AI/ML engineering, full-stack development, independent research, and practical digital products.",
       },
       { name: "twitter:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg" },
       
       { name: "linkedin:card", content: "summary_large_image" },
-      { name: "linkedin:title", content: "Susanta Banik — AI/ML Engineer, AGI Researcher & QNME-omega Inventor" },
+      { name: "linkedin:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
       {
         name: "linkedin:description",
         content:
-          "Official site of Susanta Banik, the AGI Researcher, AI/ML engineer, Inventor of QNME & Full Stack developer",
+          "AI/ML engineering, full-stack development, independent research, and practical digital products.",
       },
       { name: "linkedin:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg" },
 
       
       { name: "google:card", content: "summary_large_image" },
-      { name: "google:title", content: "Susanta Banik — AI/ML Engineer, AGI Researcher & QNME-omega Inventor" },
+      { name: "google:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
       {
         name: "google:description",
         content:
-          "Official site of Susanta Banik, the AGI Researcher, AI/ML engineer, Inventor of QNME & Full Stack developer",
+          "AI/ML engineering, full-stack development, independent research, and practical digital products.",
       },
       { name: "google:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-fifth.png" },
     ],
@@ -167,148 +167,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/favicon.svg" },
       { rel: "manifest", href: "/site.webmanifest" },
     ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "WebSite",
-              "@id": "#website",
-              name: "Susanta Banik",
-              url: "https://susanta-banik.vercel.app",
-              inLanguage: "en",
-              author: { "@id": "#susanta-banik" },
-              publisher: { "@id": "#susanta-banik" },
-            },
-            {
-              "@type": "Person",
-              "@id": "#susanta-banik",
-              name: "Susanta Banik",
-              "image": [
-              "https://susanta-banik.vercel.app/images/susanta-banik-profile.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-github.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-third.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg",
-              "https://susanta-banik.vercel.app/images/susanta-banik-fifth.png",
-              "https://susanta-banik.vercel.app/images/susanta-banik-sixth.jpg",
-              ],
-              alternateName: ["Susanta", "Susanta Banik"],
-              url: "https://susanta-banik.vercel.app/",
-              birthDate: "2006-10-20",
-              nationality: "Indian",
-              gender: "Male",
-              
-              birthPlace: {
-              "@type": "Place",
-              name: "Agartala, Tripura, India",
-              },
-              parent: [
-                {
-                  "@type": "Person",
-                  description: "Father of Susanta Banik",
-                  name: "Mr. Sunil Banik",
-                },
-                {
-                  "@type": "Person",
-                  description: "Mother of Susanta Banik",
-                  name: "Mrs. Sukla Banik",
-                },
-              ],
-              
-              description:
-                "AI/ML Engineer, Data Scientist, Full Stack Developer and Researcher. Dual-degree student pursuing B.S. in Applied AI & Data Science at IIT Jodhpur and B.Tech in AI & Data Science at Techno College of Engineering Agartala. Inventor of QNME-omega, a CPU-RAM Equalizer, that helps to train any large dataset into low specs devices easily.",
-              jobTitle: [
-                "Student",
-                "AI/ML Engineer",
-                "Data Scientist",
-                "Full Stack Developer",
-                "Researcher",
-                "Inventor",
-                "Cyber security",
-              ],
-              knowsAbout: [
-                "Artificial Intelligence",
-                "Machine Learning",
-                "Data Science",
-                "Data Analytics",
-                "Researcher",
-                "Full Stack Development",
-                "Python",
-                "TensorFlow",
-                "Web Development",
-                "QNME-omega (CPU-RAM Equalizer)",
-                "Algorithm Optimization",
-                "Competitive Programming",
-                "Data Structures and Algorithms (DSA)",
-                "Academic Publishing",
-              ],
-              
-              alumniOf: [
-                {
-                  "@type": "CollegeOrUniversity",
-                  name: "Indian Institute of Technology Jodhpur",
-                  url: "https://www.iitj.ac.in/",
-                },
-                {
-                  "@type": "CollegeOrUniversity",
-                  name: "Techno College of Engineering Agartala",
-                  url: "https://tiaedu.org/",
-                },
-              ],
-              
-              worksFor: [
-                {
-                  "@type": "Organization",
-                  name: "CodeWithFun-life",
-                  description: "Youtube channel of Susanta Banik",
-                  url: "https://www.youtube.com/@CodeWithFun-life"
-                },
-                {
-                  "@type": "Organization",
-                  name: "CodeWithFun-devhub",
-                  description: "Bookstore of Susanta Banik with affordable price",
-                  url: "https://codewithfun-devhub.vercel.app"
-                },
-                {
-                  "@type": "Organization",
-                  name: "Campuscopilot",
-                  description: "Education platform of Susanta Banik built for higher studies not for school level students.",
-                },
-              ],
-              
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "Professional inquiries",
-                url: "/#contact",
-                availableLanguage: ["English", "Bengali", "Hindi"],
-              },
-              makesOffer: [
-                { "@type": "Offer", name: "AI / ML Solutions Development" },
-                { "@type": "Offer", name: "Full Stack Web Application Development" },
-                { "@type": "Offer", name: "Mobile-Ready PWA Development" },
-                { "@type": "Offer", name: "Data Analytics & Power BI Dashboards" },
-              ],
-              sameAs: [
-                "https://www.linkedin.com/in/susanta-banik",
-                "https://susanta-banik.vercel.app",
-                "https://github.com/Susanta2006",
-                "https://x.com/SusantaBan21",
-                "https://www.youtube.com/@CodeWithFun-life",
-                "https://www.researchgate.net/profile/Susanta-Banik-4/research",
-                "https://hackerrank.com/profile/susanta_company4",
-                "https://leetcode.com/u/Susanta_Banik",
-                "https://codewithfun-devhub.vercel.app",
-                "https://labbench-woad.vercel.app",
-                "https://www.ijsr.net/getabstract.php?paperid=MR251206000138",
-              ],
-            },
-          ],
-        }),
-      },
-    ],
+
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -320,7 +179,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>Susanta Banik | AI Engineer Researcher & Inventor</title>
+        <title>Susanta Banik — Building Intelligence, thoughtfully.</title>
         <HeadContent />
         <script
           type="text/javascript"
