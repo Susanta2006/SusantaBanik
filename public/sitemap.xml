@@ -6,11 +6,11 @@
   <!-- Main Homepage -->
   <url>
     <loc>https://susanta-banik.vercel.app</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-profile.jpg</image:loc>
+      <image:loc>https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg</image:loc>
       <image:title>AI/ML Engineer, Researcher, Inventor and Student</image:title>
       <image:caption>Official headshot portrait of Susanta Banik</image:caption>
     </image:image>
@@ -55,7 +55,7 @@
   <!-- Projects Page -->
   <url>
     <loc>https://susanta-banik.vercel.app/projects</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -63,7 +63,7 @@
   <!-- Research Page -->
   <url>
     <loc>https://susanta-banik.vercel.app/research</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -71,7 +71,7 @@
   <!-- privacy Page -->
   <url>
     <loc>https://susanta-banik.vercel.app/privacy</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -79,7 +79,7 @@
   <!-- terms Page -->
   <url>
     <loc>https://susanta-banik.vercel.app/terms</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

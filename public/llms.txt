@@ -1,0 +1,29 @@
+# Susanta Banik
+
+> Portfolio of Susanta Banik, an AI/ML engineer, full-stack developer, independent researcher, and founder of Shristi AI Web Creations™.
+
+Canonical website: https://susanta-banik.vercel.app/
+
+## Main pages
+- Home and portfolio: https://susanta-banik.vercel.app/
+- Projects: https://susanta-banik.vercel.app/projects
+- Research: https://susanta-banik.vercel.app/research
+- Privacy: https://susanta-banik.vercel.app/privacy
+- Terms: https://susanta-banik.vercel.app/terms
+
+## Professional profiles
+- GitHub: https://github.com/Susanta2006
+- LinkedIn: https://www.linkedin.com/in/susanta-banik
+- Google Scholar: https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en
+- ResearchGate: https://www.researchgate.net/profile/Susanta-Banik-4
+- DEV Community: https://dev.to/susantabanik
+- Medium: https://medium.com/@b24bs2374
+
+## Selected work
+- LabBench: https://labbench-woad.vercel.app/
+- CodeWithFun DevHub: https://codewithfun-devhub.vercel.app/
+- IJSR publication: https://www.ijsr.net/getabstract.php?paperid=MR251206000138
+
+Project statuses and descriptions on the website are the primary source. Experimental research is not a claim of production readiness or clinical validation. QNME-omega and CampusCopilot do not currently have published GitHub repositories. Boreal Basin details are available on request.
+
+Contact: susanta.company4@gmail.com
