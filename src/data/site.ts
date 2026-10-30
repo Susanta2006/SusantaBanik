@@ -20,6 +20,7 @@ export const SITE = {
   roles: [
     "AI/ML Engineer",
     "Full-Stack Developer",
+    "Founder",
     "Independent AI Researcher",
   ],
   founderTitle: "Founder & Principal AI Engineer",
@@ -240,7 +241,7 @@ export const EDUCATION = [
 
 /** Internships exactly as listed on the previous site. */
 export const EXPERIENCE = [
-  { id: "kyma", role: "AI/ML Engineer Intern", org: "Kyma AI Innovations" },
+  { id: "kyma", role: "AI & RAG Development Intern", org: "Kyma AI Innovations" },
   {
     id: "unified",
     role: "Full-Stack Web Developer Intern",
