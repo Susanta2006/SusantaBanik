@@ -1,4 +1,3 @@
-import { QueryClient } from "@tanstack/react-query";
 import { createRouter, ErrorComponentProps } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import { BrandedErrorFallback } from "./lib/branded-error-fallback";
@@ -13,11 +12,8 @@ function DefaultErrorComponent({ error, reset }: ErrorComponentProps) {
 // function DefaultErrorComponent({ error, reset }: { error: unknown; reset: () => void }) { ... }
 
 export const getRouter = () => {
-  const queryClient = new QueryClient();
-
   const router = createRouter({
     routeTree,
-    context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent,

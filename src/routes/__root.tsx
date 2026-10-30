@@ -1,44 +1,34 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
-
 import { useEffect } from "react";
 import appCss from "../styles.css?url";
 import { GlobalErrorBoundary } from "../lib/branded-error-fallback";
 import { installErrorReporter } from "../lib/error-reporter";
-import { ErrorComponentProps } from "@tanstack/react-router";
+import { FONT_URL, THEME_BOOT_SCRIPT } from "../lib/theme.ts";
+import { SiteHeader } from "../components/SiteHeader.tsx";
+import { SiteFooter } from "../components/SiteFooter.tsx";
+import { JarvisLauncher } from "../components/Jarvis.tsx";
+import { SITE } from "../data/site.ts";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <div
-          aria-hidden="true"
-          className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-border bg-card font-serif text-3xl"
-        >
-          SB
-        </div>
-        <p className="mb-1 font-serif text-base text-muted-foreground">Susanta Banik</p>
-        <h1 className="text-6xl font-semibold text-foreground">404</h1>
-        <h2 className="mt-4 text-lg font-medium text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
-      </div>
+    <div className="wrap section text-center">
+      <p className="text-6xl font-extrabold text-accent">404</p>
+      <h1 className="mt-4 text-2xl">Page not found</h1>
+      <p className="mx-auto mt-3 max-w-md text-muted">
+        That page doesn’t exist or has moved. The projects, research and contact
+        sections are all on the home page.
+      </p>
+      <Link to="/" className="btn btn-primary mt-6">
+        Go to the home page
+      </Link>
     </div>
   );
 }
@@ -46,128 +36,74 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <div
-          aria-hidden="true"
-          className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-border bg-card font-serif text-3xl"
+    <div className="wrap section text-center">
+      <h1 className="text-2xl">This page hit a problem</h1>
+      <p className="mx-auto mt-3 max-w-md text-muted">
+        Something went wrong while loading it. Try again, or head back to the
+        home page.
+      </p>
+      <div className="mt-6 flex justify-center gap-3">
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => {
+            void router.invalidate();
+            reset();
+          }}
         >
-          SB
-        </div>
-        <p className="mb-1 font-serif text-base text-muted-foreground">Susanta Banik</p>
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page is taking a moment
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something briefly went wrong. The site is fine — please try again.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Try again
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-full border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
-          </a>
-        </div>
+          Try again
+        </button>
+        <a href="/" className="btn btn-ghost">
+          Home
+        </a>
       </div>
     </div>
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "title", content: "Susanta Banik | AI Engineer, Researcher & Founder" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Susanta Banik — AI/ML engineer, full-stack developer, independent researcher, and founder of Shristi AI Web Creations™.",
-      },
-      { name: "author", content: "Susanta Banik" },
+      { name: "author", content: SITE.name },
       { name: "robots", content: "index,follow,max-image-preview:large" },
-      { name: "theme-color", content: "#1a1a1a" },
-      // Search-engine ownership verification — replace `content` values once
-      // codes are issued by Google Search Console and Bing Webmaster Tools.
-      { name: "google-site-verification", content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE" },
+      {
+        name: "theme-color",
+        content: "#f5f7fc",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        name: "theme-color",
+        content: "#060b18",
+        media: "(prefers-color-scheme: dark)",
+      },
+      // Search-console ownership verification, carried over from the previous site.
+      {
+        name: "google-site-verification",
+        content: "8o9Dm94uzc3XtGBMijfLCeGXH8k0MQgKiY1eZskSbjE",
+      },
       { name: "msvalidate.01", content: "CB17D87FD9ADFFBBC69CD726C50C8E99" },
-      { property: "og:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
-      {
-        property: "og:description",
-        content:
-          "AI/ML engineering, full-stack development, independent research, and practical digital products.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Susanta Banik" },
-      { property: "og:url", content: "https://susanta-banik.vercel.app" },
-
-      // 🌟 OpenGraph Profile Image Properties (LinkedIn uses this)
-      { property: "og:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Susanta Banik — AI Developer Portfolio Preview" },
-      
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
-      {
-        name: "twitter:description",
-        content:
-          "AI/ML engineering, full-stack development, independent research, and practical digital products.",
-      },
-      { name: "twitter:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-fourth.jpg" },
-      
-      { name: "linkedin:card", content: "summary_large_image" },
-      { name: "linkedin:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
-      {
-        name: "linkedin:description",
-        content:
-          "AI/ML engineering, full-stack development, independent research, and practical digital products.",
-      },
-      { name: "linkedin:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-linkedin.jpg" },
-
-      
-      { name: "google:card", content: "summary_large_image" },
-      { name: "google:title", content: "Susanta Banik — Building Intelligence, thoughtfully." },
-      {
-        name: "google:description",
-        content:
-          "AI/ML engineering, full-stack development, independent research, and practical digital products.",
-      },
-      { name: "google:image", content: "https://susanta-banik.vercel.app/images/susanta-banik-fifth.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
         href: "https://fonts.gstatic.com",
         crossOrigin: "anonymous",
       },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap",
-      },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "icon", href: "/favicon.ico" },
-      { rel: "apple-touch-icon", href: "/favicon.svg" },
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        sizes: "48x48",
+        href: "/favicon.ico",
+      },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/site.webmanifest" },
     ],
-
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -177,22 +113,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    // suppressHydrationWarning: the boot script sets the theme class before React hydrates.
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Susanta Banik — Building Intelligence, thoughtfully.</title>
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
         <HeadContent />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "xlt1yxwkyt");
-            `,
-          }}
-        />
+        <noscript>
+          <link rel="stylesheet" href={FONT_URL} />
+        </noscript>
       </head>
       <body>
         {children}
@@ -202,17 +130,56 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+/** Microsoft Clarity analytics (carried over from the previous site). Loaded after the page is idle so it never delays rendering. */
+function useDeferredAnalytics() {
+  useEffect(() => {
+    const id = "xlt1yxwkyt";
+    const load = () => {
+      if (document.getElementById("clarity-script")) return;
+      const w = window as unknown as Record<string, unknown>;
+      w.clarity =
+        w.clarity ||
+        function (...a: unknown[]) {
+          ((w.clarity as { q?: unknown[] }).q =
+            (w.clarity as { q?: unknown[] }).q || []).push(a);
+        };
+      const s = document.createElement("script");
+      s.id = "clarity-script";
+      s.async = true;
+      s.src = `https://www.clarity.ms/tag/${id}`;
+      document.head.appendChild(s);
+    };
+    const run = () =>
+      "requestIdleCallback" in window
+        ? window.requestIdleCallback(load, { timeout: 4000 })
+        : setTimeout(load, 2000);
+    if (document.readyState === "complete") run();
+    else window.addEventListener("load", run, { once: true });
+  }, []);
+}
+
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
   useEffect(() => {
     installErrorReporter();
   }, []);
+  useDeferredAnalytics();
 
   return (
     <GlobalErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <Outlet />
-      </QueryClientProvider>
+      <>
+        <a
+          href="#main"
+          className="sr-only z-50 rounded-lg bg-accent px-4 py-2 font-semibold text-accent-fg focus:not-sr-only focus:fixed focus:left-3 focus:top-3"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="main">
+          <Outlet />
+        </main>
+        <SiteFooter />
+        <JarvisLauncher />
+      </>
     </GlobalErrorBoundary>
   );
 }

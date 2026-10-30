@@ -1,85 +1,54 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { LegalPage } from "../components/LegalPage.tsx";
+import { SITE } from "../data/site.ts";
+import { pageHead } from "../lib/seo.ts";
 
 export const Route = createFileRoute("/privacy")({
-  component: PrivacyPage,
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy — Susanta Banik" },
-      {
-        name: "description",
-        content:
-          "How Susanta Banik's official website handles your data, contact messages and chat with the Jarvis assistant.",
-      },
-      { property: "og:title", content: "Privacy Policy — Susanta Banik" },
-      {
-        property: "og:description",
-        content: "Privacy practices for Susanta Banik's personal website.",
-      },
-    ],
-    links: [{ rel: "canonical", href: "/privacy" }],
-  }),
+  component: Privacy,
+  head: () =>
+    pageHead({
+      title: `Privacy Policy — ${SITE.name}`,
+      description:
+        "How this portfolio handles contact messages, the Jarvis assistant, analytics and hosting logs.",
+      path: "/privacy",
+    }),
 });
 
-function PrivacyPage() {
+function Privacy() {
   return (
-    <main className="container-prose py-20 max-w-3xl">
-      <Link to="/" className="text-sm text-muted-foreground link-underline">
-        ← Back to home
-      </Link>
-      <h1 className="font-display text-4xl mt-6 mb-2">Privacy Policy</h1>
-      <p className="text-sm text-muted-foreground mb-8">
-        Last updated: {new Date().getFullYear()}
-      </p>
-      <div className="space-y-6 text-foreground/90 leading-relaxed">
-        <section>
-          <h2 className="font-display text-2xl mb-2">1. Who we are</h2>
-          <p>
-            This site is operated by Susanta Banik as a personal portfolio. We
-            collect the minimum information needed to answer messages you send.
-          </p>
-        </section>
-        <section>
-          <h2 className="font-display text-2xl mb-2">2. Contact form</h2>
-          <p>
-            When you submit the contact form, your name, email address and
-            message are forwarded to a private inbox via a transactional email
-            relay. Your email is used only to reply to you. We do not sell,
-            share, or add it to any marketing list.
-          </p>
-        </section>
-        <section>
-          <h2 className="font-display text-2xl mb-2">3. Jarvis chat</h2>
-          <p>
-            Messages you type into the Jarvis assistant are sent to AI providers
-            to generate a reply. Conversations are not stored on this server
-            and are not used to identify you. Please do not share sensitive
-            personal information in chat.
-          </p>
-        </section>
-        <section>
-          <h2 className="font-display text-2xl mb-2">4. Cookies & analytics</h2>
-          <p>
-            This site does not set marketing cookies. Hosting providers may keep
-            short-lived access logs (IP, user-agent, timestamp) for security and
-            abuse-prevention purposes only.
-          </p>
-        </section>
-        <section>
-          <h2 className="font-display text-2xl mb-2">5. Your rights</h2>
-          <p>
-            You may request deletion of any message you have sent by writing to
-            the same inbox you contacted. We will action reasonable requests
-            promptly.
-          </p>
-        </section>
-        <section>
-          <h2 className="font-display text-2xl mb-2">6. Updates</h2>
-          <p>
-            This policy may change as the site evolves. The &ldquo;last
-            updated&rdquo; date above will always reflect the current version.
-          </p>
-        </section>
-      </div>
-    </main>
+    <LegalPage
+      title="Privacy Policy"
+      updated="30 October 2026"
+      sections={[
+        {
+          heading: "1. Who runs this site",
+          body: `This site is operated by ${SITE.name} as a personal portfolio and the website of Shristi AI Web Creations™. Only the information needed to answer your messages is collected.`,
+        },
+        {
+          heading: "2. Contact form",
+          body: "Your name, email address, subject and message are sent from this site’s server to Web3Forms, a form-delivery service, which forwards them to a private inbox. Your email address is used only to reply to you. It is not sold, shared or added to a mailing list.",
+        },
+        {
+          heading: "3. Jarvis assistant",
+          body: "Questions you type into Jarvis are processed by this site’s server and, when a live AI model is connected, sent to the AI provider that generates the reply (currently OpenRouter or Google Gemini, depending on configuration). This site does not store conversations. Please do not enter sensitive personal information.",
+        },
+        {
+          heading: "4. Analytics and cookies",
+          body: "This site uses Microsoft Clarity to understand how pages are used (for example clicks and scrolling). Clarity may set cookies and record anonymised interaction data. It loads after the page has finished loading. Your light or dark theme choice is saved in your browser’s local storage. No advertising cookies are used.",
+        },
+        {
+          heading: "5. Hosting logs",
+          body: "The hosting provider may keep short-lived access logs (IP address, browser, time) for security and abuse prevention.",
+        },
+        {
+          heading: "6. Your choices",
+          body: `To ask for a message you sent to be deleted, email ${SITE.email}. Reasonable requests will be actioned promptly.`,
+        },
+        {
+          heading: "7. Changes",
+          body: "This policy may change as the site changes. The date above shows the current version.",
+        },
+      ]}
+    />
   );
 }

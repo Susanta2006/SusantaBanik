@@ -45,7 +45,10 @@ function scrub(input: string): string {
 
 function scrubUrl(input: string): string {
   try {
-    const u = new URL(input, typeof window !== "undefined" ? window.location.href : "http://x/");
+    const u = new URL(
+      input,
+      typeof window !== "undefined" ? window.location.href : "http://x/",
+    );
     // Drop query + hash to avoid leaking anything user-typed.
     return `${u.origin}${u.pathname}`;
   } catch {
@@ -75,7 +78,8 @@ export function report(error: unknown, context?: string) {
   // Console is the transport. Wrapped in a tag so it's easy to filter.
   console.error("[SB:error]", record);
   if (typeof window !== "undefined") {
-    (window as unknown as { __SB_ERRORS__?: ErrorRecord[] }).__SB_ERRORS__ = errors;
+    (window as unknown as { __SB_ERRORS__?: ErrorRecord[] }).__SB_ERRORS__ =
+      errors;
   }
 }
 
@@ -93,7 +97,10 @@ export function installErrorReporter() {
   // Route-change breadcrumbs (pushState/popstate).
   const push = history.pushState;
   history.pushState = function (...args: Parameters<typeof history.pushState>) {
-    addBreadcrumb({ kind: "nav", message: scrubUrl(String(args[2] ?? window.location.href)) });
+    addBreadcrumb({
+      kind: "nav",
+      message: scrubUrl(String(args[2] ?? window.location.href)),
+    });
     return push.apply(this, args);
   };
   window.addEventListener("popstate", () => {
@@ -119,7 +126,8 @@ export function installErrorReporter() {
   // Wrap fetch to record failures (status + scrubbed URL only).
   const origFetch = window.fetch;
   window.fetch = async (...args) => {
-    const url = typeof args[0] === "string" ? args[0] : (args[0] as Request).url;
+    const url =
+      typeof args[0] === "string" ? args[0] : (args[0] as Request).url;
     try {
       const res = await origFetch(...args);
       if (!res.ok) {

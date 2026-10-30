@@ -1,0 +1,207 @@
+import { useRef, useState, type FormEvent } from "react";
+import { CheckCircle2, CircleAlert, Send } from "lucide-react";
+import { contactSchema, fieldErrors } from "../lib/contact-schema.ts";
+import { SITE } from "../data/site.ts";
+
+type State =
+  | { kind: "idle" }
+  | { kind: "sending" }
+  | { kind: "ok" }
+  | { kind: "error"; message: string };
+
+const FIELDS = ["name", "email", "subject", "message"] as const;
+
+function FieldError({ id, message }: { id: string; message?: string }) {
+  if (!message) return null;
+  return (
+    <p id={id} className="mt-1.5 text-sm text-danger" role="alert">
+      {message}
+    </p>
+  );
+}
+
+export function ContactForm() {
+  const [state, setState] = useState<State>({ kind: "idle" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const shownAt = useRef(Date.now());
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const values = Object.fromEntries(
+      FIELDS.map((k) => [k, String(fd.get(k) ?? "")]),
+    );
+
+    const parsed = contactSchema.safeParse(values);
+    if (!parsed.success) {
+      const errs = fieldErrors(parsed.error);
+      setErrors(errs);
+      setState({ kind: "idle" });
+      form
+        .querySelector<HTMLElement>(`[name="${Object.keys(errs)[0]}"]`)
+        ?.focus();
+      return;
+    }
+    setErrors({});
+    setState({ kind: "sending" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...values,
+          website: String(fd.get("website") ?? ""),
+          elapsedMs: Date.now() - shownAt.current,
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+        fields?: Record<string, string>;
+      };
+      if (res.ok && data.ok) {
+        form.reset();
+        setState({ kind: "ok" });
+        return;
+      }
+      if (data.fields) setErrors(data.fields);
+      setState({
+        kind: "error",
+        message:
+          data.error ?? `Something went wrong. Please email ${SITE.email}.`,
+      });
+    } catch {
+      setState({
+        kind: "error",
+        message: `Network error. Check your connection, or email ${SITE.email}.`,
+      });
+    }
+  }
+
+  const sending = state.kind === "sending";
+  const input = (name: string) => ({
+    name,
+    id: `contact-${name}`,
+    className: "field",
+    "aria-invalid": errors[name] ? (true as const) : undefined,
+    "aria-describedby": errors[name] ? `contact-${name}-error` : undefined,
+  });
+
+  return (
+    <form
+      onSubmit={onSubmit}
+      noValidate
+      className="grid gap-4"
+      aria-describedby="contact-status"
+    >
+      {/* Honeypot: people never see or fill this. */}
+      <div
+        aria-hidden
+        className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
+      >
+        <label>
+          Website
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label
+            htmlFor="contact-name"
+            className="mb-1.5 block text-sm font-semibold"
+          >
+            Name
+          </label>
+          <input
+            {...input("name")}
+            autoComplete="name"
+            required
+            maxLength={120}
+          />
+          <FieldError id="contact-name-error" message={errors.name} />
+        </div>
+        <div>
+          <label
+            htmlFor="contact-email"
+            className="mb-1.5 block text-sm font-semibold"
+          >
+            Email
+          </label>
+          <input
+            {...input("email")}
+            type="email"
+            autoComplete="email"
+            required
+            maxLength={254}
+          />
+          <FieldError id="contact-email-error" message={errors.email} />
+        </div>
+      </div>
+      <div>
+        <label
+          htmlFor="contact-subject"
+          className="mb-1.5 block text-sm font-semibold"
+        >
+          Subject <span className="font-normal text-muted">(optional)</span>
+        </label>
+        <input {...input("subject")} maxLength={200} />
+        <FieldError id="contact-subject-error" message={errors.subject} />
+      </div>
+      <div>
+        <label
+          htmlFor="contact-message"
+          className="mb-1.5 block text-sm font-semibold"
+        >
+          How can I help?
+        </label>
+        <textarea
+          {...input("message")}
+          rows={6}
+          required
+          maxLength={4000}
+          className="field resize-y"
+        />
+        <FieldError id="contact-message-error" message={errors.message} />
+      </div>
+
+      <div className="flex flex-wrap items-center gap-4">
+        <button
+          type="submit"
+          disabled={sending}
+          className="btn btn-primary disabled:opacity-60"
+        >
+          {sending ? "Sending…" : "Send message"}
+          {!sending && <Send aria-hidden className="h-4 w-4" />}
+        </button>
+        <p className="text-sm text-muted">
+          Or email{" "}
+          <a className="text-link font-semibold" href={`mailto:${SITE.email}`}>
+            {SITE.email}
+          </a>
+        </p>
+      </div>
+
+      <div
+        id="contact-status"
+        role={state.kind === "error" ? "alert" : "status"}
+        aria-live="polite"
+      >
+        {state.kind === "ok" && (
+          <p className="flex items-center gap-2 text-sm font-semibold text-ok">
+            <CheckCircle2 aria-hidden className="h-4 w-4" /> Message sent. I’ll
+            reply to the email address you gave.
+          </p>
+        )}
+        {state.kind === "error" && (
+          <p className="flex items-start gap-2 text-sm font-semibold text-danger">
+            <CircleAlert aria-hidden className="mt-0.5 h-4 w-4 shrink-0" />{" "}
+            {state.message}
+          </p>
+        )}
+      </div>
+    </form>
+  );
+}

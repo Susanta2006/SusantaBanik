@@ -1,82 +1,55 @@
-# Susanta Banik — AI Portfolio
+# **Hi there, I'm Susanta Banik 👋**
 
-Portfolio site for **Susanta Banik** — AI/ML engineer, full-stack developer, independent AI researcher, and founder of Shristi AI Web Creations™.
-Tagline: **“Building Intelligence, thoughtfully.”**
+### ***Building intelligence, thoughtfully.***
 
-Built on the existing stack (TanStack Start + React 19 + Tailwind CSS v4, deployed with Nitro's Vercel preset). The framework was kept; the design, data layer, Jarvis assistant, SEO and APIs were rebuilt.
+### **💫 About Me**
 
-## Quick start
+I am a **19-year-old AI/ML Engineer, Data Scientist, Full Stack Developer, and Researcher**. Currently, I am pursuing a unique dual-track academic path that balances deep research with high-velocity product shipping:
 
-```bash
-npm install          # Node 20+ (tested on Node 22)
-npm run dev          # http://localhost:3000 (Vite)
-npm run build        # type-check + production build → .vercel/output
-npm run preview      # serve the production build locally
-npm test             # unit tests (registry + Jarvis grounding)
-npm run typecheck    # tsc --noEmit
-npm run lint         # eslint
-npm run generate:llms   # regenerate public/llms.txt from the data registries
-```
+* **B.S. in Applied AI & Data Science** — *Indian Institute of Technology, Jodhpur* (Learning to reason deeply)  
+* **B.Tech in AI & Data Science** — *Techno College of Engineering, Agartala* (Learning to ship quickly)
 
-Browser smoke tests (optional, Playwright is *not* a project dependency):
+My work lives where deep machine learning models meet robust, scalable full-stack applications. I comfortably navigate between training LSTMs, deploying RAG architectures, writing API services, and crafting beautiful responsive frontends.
 
-```bash
-npm run build && npx vite preview --port 4173 &
-NODE_PATH=$(npm root -g) node tests/e2e/smoke.cjs
-```
+### **📊 My Track Record at a Glance**
 
-## Deploy (Vercel)
+🚀 20 Years Old           🎓 2 Concurrent Degrees      💻 20+ Shipped Projects  
+📝 2 Research Papers      📜 30+ Tech Certifications   ⚡ 5 Completed Internships
 
-1. Import the repo in Vercel. The Nitro `vercel` preset is already configured in `vite.config.ts`; no framework override needed.
-2. Add the environment variables below (all optional; the site works without them and says so honestly).
-3. Deploy. Then submit `https://susanta-banik.vercel.app/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+### **🛠️ Tech Stack & Tooling**
 
-## Environment variables (see `.env.example`)
+### **🌟 Featured Research & Projects**
 
-| Variable | Used by | Effect if missing |
-|---|---|---|
-| `WEB3FORMS_ACCESS_KEY` | `/api/contact` | Form shows “not connected, please email …” — it never fakes success |
-| `OPENROUTER_API_KEY`, `OPENROUTER_MODELS` | `/api/chat` | Jarvis answers directly from portfolio data and labels it |
-| `GEMINI_API_KEY`, `GEMINI_MODEL` | `/api/chat` | Same as above |
-| `GITHUB_TOKEN` | `/api/github` | Optional; only raises GitHub's rate limit |
+#### **🧠 [Jarvis-v9](https://www.researchgate.net/profile/Susanta-Banik-4/research)**
 
-Never prefix these with `VITE_` — that would ship them to the browser. **Rotate the old Web3Forms key**: it was hard-coded in the previous source.
+* **A Continual-Learning Synthetic AGI Agent with Emergent Social Intelligence**  
+* *Scope:* Synthesizing self-improving, continual learning loops in minimalist conversational interfaces. Built to test emergent behaviors in synthetic social environments.
 
-## Where to edit things
+#### **🎓 [CampusCopilot AI](https://vercel.app/) *(In Active Development)***
 
-| To change… | Edit |
-|---|---|
-| Add / update a project | `src/data/projects.ts` (the carousel, /projects page, sitemap hints, JSON-LD, llms.txt and Jarvis all read it) |
-| Publications | `src/data/research.ts` |
-| Bio, links, services, education, skills, contact email | `src/data/site.ts` |
-| Smaller archive projects | `src/data/archive.ts` |
-| Colours / motion | `src/styles.css` (tokens at the top) |
-| Jarvis behaviour | `src/lib/jarvis/prompt.ts`, `src/lib/jarvis/knowledge.ts` |
+* **An AI-Native Educational platform built for modern students.**  
+* *Features:* Translates dense, unstructured coursework into clean study maps, dynamic quizzes, and personalized, real-time feedback loops.
 
-**Project rules:** set a URL only when it really exists. Use `repositoryStatus: "unpublished"` for work not yet on GitHub (QNME-omega, CampusCopilot) — never invent a link. The home carousel shows entries with `featured: true` (keep it to 4–5 live or public-source projects); everything else appears on `/projects`.
+#### **📚 [Code with Fun Dev Hub](https://codewithfun-devhub.vercel.app/)**
 
-After editing data, run `npm test` and `npm run generate:llms`.
+* **An affordable online bookstore engineered for developers & students.**  
+* *Vision:* Making foundational computer science textbooks and development references highly accessible. Fully responsive web-app designed and maintained by me.
 
-## Architecture
+#### **📚 [LabBench](https://labbench-woad.vercel.app/)**
 
-```
-src/
-  data/           site, projects, research, archive registries (single source of truth)
-  lib/jarvis/     grounding: passages built from the registries, retrieval, prompt, offline answers
-  lib/seo.ts      page head + JSON-LD (Person, Organization, WebSite, ScholarlyArticle)
-  lib/theme.ts    pre-paint theme script (OS preference first, then saved choice)
-  routes/         /, /projects, /research, /privacy, /terms, /sitemap.xml, /api/{chat,contact,github}
-  components/     header, footer, hero/sections, carousel (native scroll-snap), Jarvis (lazy), forms
-public/           robots.txt, llms.txt, manifest, favicon.ico (from the portrait), optimised images (AVIF/WebP/JPEG)
-tests/            unit tests + e2e/smoke.cjs
-docs/             AUDIT.md, TEST_REPORT.md
-```
+* **A Progressive Web App & Real-Time Code Execution IDE with multi-language compilation support**  
+* *Vision:* LabBench was created to make common programming-lab work less fragmented and more approachable.
 
-### Jarvis
-Answers are grounded in passages generated from the same registries as the site. With a model key set, the server sends the question plus the most relevant passages to the model. With no key, or if the model fails, the server answers from the passages and shows a notice. If the server itself is unreachable, the browser answers from its bundled data. The chat panel is lazy-loaded on first open.
+### **📝 Academic Publications**
 
-### Performance notes
-Initial JS ≈ 139 KB gzip, CSS ≈ 7 KB gzip. Fonts load without blocking render. Analytics (Microsoft Clarity, carried over) loads after the page is idle. Hero portrait uses AVIF/WebP/JPEG with explicit dimensions and high fetch priority; all other images are lazy.
+1. **"Emergent Social Consciousness in a Minimalist Conversational Agent: A Case Study"** *Paper ID: MR251206000138* | Published in **IJSR**  
+2. **"Jarvis-v9: A Continual-Learning Synthetic AGI Agent: with Emergent Social Intelligence"**  
+   *DOI: 10.13140/RG.2.2.12547.05921* | Pre-print available on **ResearchGate**
 
-## Known limitations
-See `docs/AUDIT.md` (decisions needing your confirmation) and `docs/TEST_REPORT.md` (what was and was not verified).
+### **📬 Get in Touch\!**
+
+I’m always open to freelance opportunities, academic research collaborations, or building interesting AI tools for your workflow.
+
+* **Official Website:** [susanta-banik.vercel.app](https://susanta-banik.vercel.app/) (Chat with my virtual assistant Jarvis live\!)  
+* **LinkedIn:** [in/susanta-banik](https://www.linkedin.com/in/susanta-banik)  
+* **Email/Phone:** Reach out directly through the [contact form on my website](https://susanta-banik.vercel.app/#contact).

@@ -50,35 +50,37 @@ export function BrandedErrorFallback({
     <div
       role="alert"
       aria-live="assertive"
-      className="flex min-h-screen items-center justify-center bg-background px-4"
+      className="flex min-h-screen items-center justify-center bg-bg px-4"
     >
       <div className="max-w-md text-center">
         <div
           aria-hidden="true"
-          className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-border bg-card font-serif text-3xl"
+          className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-line bg-surface border border-line text-3xl"
         >
           SB
         </div>
-        <p className="mb-1 font-serif text-base text-muted-foreground">Susanta Banik</p>
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">{title}</h1>
-        <p className="mt-2 text-sm text-muted-foreground">{message}</p>
+        <p className="mb-1 text-base text-muted">Susanta Banik</p>
+        <h1 className="text-xl font-semibold tracking-tight text-fg">
+          {title}
+        </h1>
+        <p className="mt-2 text-sm text-muted">{message}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             type="button"
             onClick={handleRetry}
-            className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-fg transition-colors hover:brightness-110"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-full border border-input bg-bg px-4 py-2 text-sm font-medium text-fg transition-colors hover:border-accent"
           >
             Go home
           </a>
         </div>
         {autoReload && secondsLeft > 0 ? (
-          <p className="mt-4 text-xs text-muted-foreground" aria-live="polite">
+          <p className="mt-4 text-xs text-muted" aria-live="polite">
             Auto-reloading in {secondsLeft}s…
           </p>
         ) : null}
