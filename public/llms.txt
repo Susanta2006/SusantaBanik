@@ -1,29 +1,53 @@
 # Susanta Banik
 
-> Portfolio of Susanta Banik, an AI/ML engineer, full-stack developer, independent researcher, and founder of Shristi AI Web Creations™.
+> AI/ML Engineer, Full-Stack Developer, Independent AI Researcher. Founder & Principal AI Engineer of Shristi AI Web Creations™, based in Agartala, Tripura, India. "Building Intelligence, thoughtfully."
 
-Canonical website: https://susanta-banik.vercel.app/
+This file is a concise, human-readable summary for language-model tools. It is not an indexing guarantee. Statuses below are deliberate: experimental and in-development work is not presented as finished or proven.
 
-## Main pages
-- Home and portfolio: https://susanta-banik.vercel.app/
-- Projects: https://susanta-banik.vercel.app/projects
-- Research: https://susanta-banik.vercel.app/research
-- Privacy: https://susanta-banik.vercel.app/privacy
-- Terms: https://susanta-banik.vercel.app/terms
+## Pages
+- [Home](https://susanta-banik.vercel.app/): overview, projects, founder section, contact
+- [Projects](https://susanta-banik.vercel.app/projects): every project with status and real links
+- [Research](https://susanta-banik.vercel.app/research): journal paper and preprint
 
-## Professional profiles
+## Projects
+- **LabBench** (Live): A zero-setup, browser-based coding workspace for students, with AI hints that explain errors instead of handing out answers. [demo https://labbench-woad.vercel.app/; repo https://github.com/Susanta2006/labbench]
+- **BloodSignal** (Hackathon project): An evidence-aware blood-bank finder built for a hackathon by Team Pragmatrix. It shows what is known, what is stale and what still needs a phone call. Caution: An information tool only. Availability is not guaranteed or real-time, so always confirm with the facility. It is not medical advice. [demo https://bloodsignal.vercel.app/; repo https://github.com/Susanta2006/BloodSignal]
+- **CodeWithFun Dev Hub** (Live): An online bookstore for developers and students, with technical books and study material at affordable prices. [demo https://codewithfun-devhub.vercel.app/]
+- **Fraud Detection** (Portfolio project): A TensorFlow/Keras deep neural network that classifies transactions as normal or fraudulent. [repo https://github.com/Susanta2006/Fraud-Detection]
+- **Emotion Detect** (Portfolio project): A computer-vision tool that estimates a face's emotion using OpenCV, DeepFace and TensorFlow. Caution: Outputs are model estimates, not facts about a person. [repo https://github.com/Susanta2006/emotion-detect]
+- **Jarvis-v9** (Ongoing research): Independent research on a modular conversational agent with persistent memory, published as a journal case study and a preprint. [paper https://www.ijsr.net/getabstract.php?paperid=MR251206000138]
+- **QNME-omega** (Ongoing research): Ongoing research into memory- and compute-conscious AI/ML workflows for resource-constrained hardware. Caution: Research in progress. No published benchmarks yet. [Repository not yet published]
+- **CampusCopilot** (In development): An AI-powered study platform for higher-education and competitive-exam students, in active development. [Repository not yet published]
+- **Medical AI System** (Experimental): An experimental decision-support project exploring symptom-based models and how to communicate their uncertainty. Caution: Not a clinically validated diagnostic tool. It must not be used to diagnose or treat any condition.
+- **AI Tutor — Document Q&A** (Portfolio project): A retrieval-augmented generation app for asking questions about your own documents.
+- **Boreal Basin** (Client product): Client product — details available on request.
+- **FSMN** (Ongoing research): An experimental neural architecture based on spiking-neuron dynamics and local learning.
+
+## Research
+- Journal paper: "Emergent Social Consciousness in a Minimalist Conversational Agent: A Case Study on Jarvis — Observations from a Custom-Built Artificial Intelligence System", International Journal of Science and Research (IJSR), Vol. 14, Issue 12, December 2025, pp. 480–482. Paper ID: MR251206000138. https://dx.doi.org/10.21275/MR251206000138
+- Preprint: "Jarvis-v9: A Continual-Learning Synthetic AGI with Biologically-Inspired Generative Architecture, Persistent Memory, and Nine Cognitive Engines", ResearchGate, 2026. DOI: 10.13140/RG.2.2.12547.05921. https://doi.org/10.13140/RG.2.2.12547.05921
+
+## Business
+- Shristi AI Web Creations™: A Udyam-registered sole-proprietorship micro enterprise providing software development, AI/ML solutions, web applications and related digital engineering services.
+- Service: AI/ML and LLM applications
+- Service: Full-stack web applications
+- Service: Progressive web apps
+- Service: Data and analytics
+
+## Profiles
 - GitHub: https://github.com/Susanta2006
 - LinkedIn: https://www.linkedin.com/in/susanta-banik
 - Google Scholar: https://scholar.google.com/citations?user=CBZeE3wAAAAJ&hl=en
 - ResearchGate: https://www.researchgate.net/profile/Susanta-Banik-4
 - DEV Community: https://dev.to/susantabanik
 - Medium: https://medium.com/@b24bs2374
+- X: https://x.com/SusantaBan21
+- YouTube: https://www.youtube.com/@CodeWithFun-life
+- HackerRank: https://hackerrank.com/profile/susanta_company4
+- LeetCode: https://leetcode.com/u/Susanta_Banik/
+- CodeWithFun Dev Hub: https://codewithfun-devhub.vercel.app/
+- Shristi AI Web Creations on LinkedIn: https://www.linkedin.com/company/shristi-ai-web-creations/
 
-## Selected work
-- LabBench: https://labbench-woad.vercel.app/
-- CodeWithFun DevHub: https://codewithfun-devhub.vercel.app/
-- IJSR publication: https://www.ijsr.net/getabstract.php?paperid=MR251206000138
-
-Project statuses and descriptions on the website are the primary source. Experimental research is not a claim of production readiness or clinical validation. QNME-omega and CampusCopilot do not currently have published GitHub repositories. Boreal Basin details are available on request.
-
-Contact: susanta.company4@gmail.com
+## Contact
+- susanta.company4@gmail.com
+- https://susanta-banik.vercel.app/#contact
