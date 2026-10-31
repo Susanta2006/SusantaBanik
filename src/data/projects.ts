@@ -163,6 +163,7 @@ export const PROJECTS: Project[] = [
       alt: "CodeWithFun Dev Hub storefront",
     },
     demoUrl: "https://codewithfun-devhub.vercel.app/",
+    repositoryUrl: "https://github.com/Susanta2006/code_with_dev_hub",
     visibility: "public",
     provenance:
       "Previous site copy and the supplied profile list. No repository was identified on the public GitHub profile; liveness not machine-checked.",

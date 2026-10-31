@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GithubRepos } from "../components/GithubRepos.tsx";
-import { ProjectCard } from "../components/ProjectCard.tsx";
+import {
+  ProjectViewer,
+  type ViewerItem,
+} from "../components/ProjectViewer.tsx";
 import { Reveal } from "../components/Reveal.tsx";
 import { ARCHIVE } from "../data/archive.ts";
 import { PROJECTS, type Project } from "../data/projects.ts";
@@ -57,6 +60,10 @@ const PROJECT_GROUPS: {
   },
 ];
 
+const VIEWER_ITEMS: ViewerItem[] = PROJECT_GROUPS.flatMap((g) =>
+  g.projects.map((project) => ({ project, group: g.title })),
+);
+
 export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
   head: () =>
@@ -79,7 +86,6 @@ export const Route = createFileRoute("/projects")({
             position: i + 1,
             name: p.name,
             description: p.summary,
-            url: `${abs("/projects")}#${p.id}`,
           })),
         },
       },
@@ -92,48 +98,32 @@ function ProjectsPage() {
       <Reveal>
         <h1 className="text-4xl md:text-5xl">Projects and products</h1>
         <p className="mt-4 max-w-2xl text-lg text-muted">
-          Every entry states its status. Links appear only where a demo,
-          repository or paper actually exists. Work whose repository hasn’t been
-          published is labelled as such.
+          Move through the work one project at a time. Each one states its
+          status, and links appear only where a demo, repository or paper
+          actually exists.
         </p>
       </Reveal>
 
-      {PROJECT_GROUPS.map((g) => (
-        <section
-          key={g.id}
-          aria-labelledby={`group-${g.id}`}
-          className="mt-16 first:mt-10"
-        >
-          <h2 id={`group-${g.id}`} className="text-2xl md:text-3xl">
-            {g.title}
-          </h2>
-          <p className="mt-2 max-w-2xl text-muted">{g.lead}</p>
-          <ul className="mt-6 grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {g.projects.map((p) => (
-              <li key={p.id} className="min-w-0">
-                <ProjectCard project={p} headingLevel={3} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
+      <Reveal delay={80} className="mt-12">
+        <ProjectViewer items={VIEWER_ITEMS} headingLevel={2} />
+      </Reveal>
 
-      <section aria-labelledby="gh-title" className="mt-20">
+      <section aria-labelledby="gh-title" className="mt-24">
         <h2 id="gh-title" className="text-3xl">
           Public repositories on GitHub
         </h2>
-        <p className="mb-6 mt-2 max-w-2xl text-muted">
-          Fetched live from GitHub after the page loads and cached for up to 30
-          minutes. Non-fork, non-archived repositories only.
+        <p className="mb-8 mt-2 max-w-2xl text-muted">
+          Loaded live from GitHub and cached for up to 30 minutes. Non-fork,
+          non-archived repositories only.
         </p>
         <GithubRepos />
       </section>
 
-      <section aria-labelledby="archive-title" className="mt-20">
+      <section aria-labelledby="archive-title" className="mt-24">
         <h2 id="archive-title" className="text-3xl">
           The wider catalogue
         </h2>
-        <p className="mb-6 mt-2 max-w-2xl text-muted">
+        <p className="mb-8 mt-2 max-w-2xl text-muted">
           Smaller projects across web, Python, machine learning, deep learning
           and analytics. Descriptions are carried over from the previous site.
         </p>

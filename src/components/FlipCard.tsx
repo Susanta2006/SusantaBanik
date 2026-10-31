@@ -30,7 +30,7 @@ export function FlipCard({
   const backId = `${id}-back`;
 
   return (
-    <div className="flip" data-flipped={flipped || undefined}>
+    <div className="flip h-full" data-flipped={flipped || undefined}>
       <div className="flip-inner">
         <section
           id={frontId}
@@ -77,7 +77,12 @@ export function FlipCard({
           inert={!flipped}
         >
           <div className="flex h-full flex-col gap-5 p-6">
-            <div className="min-h-0 flex-1 text-[.95rem] leading-relaxed text-muted">
+            <div
+              className="flip-scroll min-h-0 flex-1 overflow-y-auto pr-2 text-[.95rem] leading-relaxed text-muted"
+              tabIndex={0}
+              role="region"
+              aria-label={`${front.title}: details`}
+            >
               {back}
             </div>
             <button
