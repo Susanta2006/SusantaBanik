@@ -176,7 +176,7 @@ function Details({ project: p, headingLevel }: { project: Project; headingLevel:
  * loop at the ends. Dots jump to any project. Arrow keys work when the viewer
  * has focus, and a horizontal swipe changes project on touch screens.
  */
-export function ProjectViewer({
+export function ProjectCard({
   items,
   headingLevel = 2,
   startIndex = 0,
