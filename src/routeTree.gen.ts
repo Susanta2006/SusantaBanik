@@ -16,7 +16,6 @@ import { Route as ResearchRouteImport } from './routes/research'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
-import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ApiGithubRouteImport } from './routes/api/github'
 
 const IndexRoute = IndexRouteImport.update({
@@ -54,11 +53,6 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiContactRoute = ApiContactRouteImport.update({
-  id: '/api/contact',
-  path: '/api/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiGithubRoute = ApiGithubRouteImport.update({
   id: '/api/github',
   path: '/api/github',
@@ -73,7 +67,6 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/api/chat': typeof ApiChatRoute
-  '/api/contact': typeof ApiContactRoute
   '/api/github': typeof ApiGithubRoute
 }
 export interface FileRoutesByTo {
@@ -84,7 +77,6 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/api/chat': typeof ApiChatRoute
-  '/api/contact': typeof ApiContactRoute
   '/api/github': typeof ApiGithubRoute
 }
 export interface FileRoutesById {
@@ -96,7 +88,6 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/api/chat': typeof ApiChatRoute
-  '/api/contact': typeof ApiContactRoute
   '/api/github': typeof ApiGithubRoute
 }
 export interface FileRouteTypes {
@@ -109,7 +100,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/api/chat'
-    | '/api/contact'
     | '/api/github'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -120,7 +110,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/api/chat'
-    | '/api/contact'
     | '/api/github'
   id:
     | '__root__'
@@ -131,7 +120,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/api/chat'
-    | '/api/contact'
     | '/api/github'
   fileRoutesById: FileRoutesById
 }
@@ -143,7 +131,6 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   ApiChatRoute: typeof ApiChatRoute
-  ApiContactRoute: typeof ApiContactRoute
   ApiGithubRoute: typeof ApiGithubRoute
 }
 
@@ -198,13 +185,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/contact': {
-      id: '/api/contact'
-      path: '/api/contact'
-      fullPath: '/api/contact'
-      preLoaderRoute: typeof ApiContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api/github': {
       id: '/api/github'
       path: '/api/github'
@@ -223,7 +203,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   ApiChatRoute: ApiChatRoute,
-  ApiContactRoute: ApiContactRoute,
   ApiGithubRoute: ApiGithubRoute,
 }
 export const routeTree = rootRouteImport

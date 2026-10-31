@@ -1,4 +1,4 @@
-import { useRef, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { CheckCircle2, CircleAlert, Send } from "lucide-react";
 import { contactSchema, fieldErrors } from "../lib/contact-schema.ts";
 import { SITE } from "../data/site.ts";
@@ -10,6 +10,14 @@ type State =
   | { kind: "error"; message: string };
 
 const FIELDS = ["name", "email", "subject", "message"] as const;
+
+/**
+ * Web3Forms access key. These keys are designed to be public: they only let
+ * the form deliver mail to the owner's inbox, so they are safe in browser code
+ * (the original site used the same approach). The endpoint is the same one.
+ */
+const WEB3FORMS_URL = "https://api.web3forms.com/submit";
+const WEB3FORMS_ACCESS_KEY = "85b50799-228a-4d46-8dec-63c72ca82d95";
 
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
@@ -23,7 +31,6 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 export function ContactForm() {
   const [state, setState] = useState<State>({ kind: "idle" });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const shownAt = useRef(Date.now());
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -47,30 +54,37 @@ export function ContactForm() {
     setState({ kind: "sending" });
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(WEB3FORMS_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
-          ...values,
-          website: String(fd.get("website") ?? ""),
-          elapsedMs: Date.now() - shownAt.current,
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: parsed.data.name,
+          email: parsed.data.email,
+          replyto: parsed.data.email,
+          subject:
+            parsed.data.subject ||
+            `New portfolio message from ${parsed.data.name}`,
+          message: parsed.data.message,
         }),
       });
       const data = (await res.json().catch(() => ({}))) as {
-        ok?: boolean;
-        error?: string;
-        fields?: Record<string, string>;
+        success?: boolean;
+        message?: string;
       };
-      if (res.ok && data.ok) {
+      if (res.ok && data.success) {
         form.reset();
         setState({ kind: "ok" });
         return;
       }
-      if (data.fields) setErrors(data.fields);
       setState({
         kind: "error",
         message:
-          data.error ?? `Something went wrong. Please email ${SITE.email}.`,
+          data.message ||
+          `Your message could not be sent. Please email ${SITE.email} instead.`,
       });
     } catch {
       setState({
@@ -79,7 +93,6 @@ export function ContactForm() {
       });
     }
   }
-
   const sending = state.kind === "sending";
   const input = (name: string) => ({
     name,

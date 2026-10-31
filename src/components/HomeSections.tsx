@@ -58,18 +58,23 @@ export function Hero() {
     >
       <div className="wrap grid items-center gap-12 pb-16 pt-12 md:pb-24 md:pt-20 lg:grid-cols-[1.15fr_.85fr]">
         <div>
-          <p className="text-lg font-semibold text-muted">{SITE.name}</p>
-          <ul className="mt-3 flex flex-wrap gap-2" aria-label="Roles">
+          <h1
+            id="hero-title"
+            className="text-5xl font-extrabold leading-none tracking-tight sm:text-6xl lg:text-7xl"
+          >
+            {SITE.name}
+          </h1>
+          <p className="mt-4 text-xl font-semibold text-fg sm:text-2xl lg:text-3xl">
+            Building Intelligence,{" "}
+            <span className="text-accent">thoughtfully.</span>
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-2" aria-label="Roles">
             {SITE.roles.map((r) => (
               <li key={r} className="chip">
                 {r}
               </li>
             ))}
           </ul>
-          <h1 id="hero-title" className="mt-6 text-5xl sm:text-6xl lg:text-7xl">
-            Building Intelligence,{" "}
-            <span className="text-accent">thoughtfully.</span>
-          </h1>
           <p className="mt-6 max-w-xl text-lg text-muted">{SITE.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/" hash="projects" className="btn btn-primary">
