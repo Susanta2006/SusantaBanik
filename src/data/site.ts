@@ -19,8 +19,9 @@ export const SITE = {
   /** Titles used in the hero and metadata. */
   roles: [
     "AI/ML Engineer",
+    "Founder",
     "Full-Stack Developer",
-    "Independent AI Researcher",
+    "Researcher",
   ],
   founderTitle: "Founder & Principal AI Engineer",
   intro:
@@ -33,7 +34,7 @@ export const SITE = {
    * to show it again on the contact section.
    */
   phone: "+91 81190 98684",
-  showPhone: false,
+  showPhone: true,
 } as const;
 
 export const BUSINESS = {
