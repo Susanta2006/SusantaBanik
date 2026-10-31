@@ -9,7 +9,7 @@ export const Route = createFileRoute("/research")({
   component: ResearchPage,
   head: () =>
     pageHead({
-      title: `Research — ${SITE.name}`,
+      title: `AI research: conversational agents and memory — ${SITE.name}`,
       description:
         "Research by Susanta Banik on conversational agents and memory-conscious AI: a journal paper in IJSR and a Jarvis-v9 preprint.",
       path: "/research",

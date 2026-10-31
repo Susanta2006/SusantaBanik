@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () =>
     pageHead({
-      title: `${SITE.name} — AI/ML Engineer, Full-Stack Developer & AI Researcher`,
+      title: `${SITE.name} — AI/ML Engineer & AI Researcher`,
       description: SITE.metaDescription,
       path: "/",
       type: "profile",

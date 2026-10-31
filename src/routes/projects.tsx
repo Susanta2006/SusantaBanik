@@ -61,7 +61,7 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
   head: () =>
     pageHead({
-      title: `Projects and products — ${SITE.name}`,
+      title: `AI, ML and full-stack projects — ${SITE.name}`,
       description:
         "AI/ML, research and full-stack projects by Susanta Banik, each with its real status: live, in development, experimental research or client work.",
       path: "/projects",

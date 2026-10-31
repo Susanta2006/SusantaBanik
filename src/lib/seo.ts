@@ -3,9 +3,10 @@ import { SITE, BUSINESS, PROFILES, SERVICES } from "../data/site.ts";
 export const PORTRAIT_PATH = "/images/portrait-800.jpg";
 export const OG_IMAGE = "/images/og.jpg";
 
+/** Absolute URL. The home page always uses the trailing-slash form so canonical, og:url and the sitemap agree. */
 export function abs(path: string): string {
   if (/^https?:\/\//.test(path)) return path;
-  return `${SITE.url}${path === "/" ? "" : path}`;
+  return path === "/" ? `${SITE.url}/` : `${SITE.url}${path}`;
 }
 
 export const IDS = {

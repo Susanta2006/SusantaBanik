@@ -10,8 +10,8 @@ This file is a concise, human-readable summary for language-model tools. It is n
 - [Research](https://susanta-banik.vercel.app/research): journal paper and preprint
 
 ## Projects
-- **LabBench** (Live): A zero-setup, browser-based coding workspace for students, with AI hints that explain errors instead of handing out answers. [demo https://labbench-woad.vercel.app/; repo https://github.com/Susanta2006/labbench]
-- **BloodSignal** (Hackathon project): An evidence-aware blood-bank finder built for a hackathon by Team Pragmatrix. It shows what is known, what is stale and what still needs a phone call. Caution: An information tool only. Availability is not guaranteed or real-time, so always confirm with the facility. It is not medical advice. [demo https://bloodsignal.vercel.app/; repo https://github.com/Susanta2006/BloodSignal]
+- **LabBench** (Live): A browser-based coding environment with AI-assisted teaching, designed for mobile-first learning. [demo https://labbench-woad.vercel.app/; repo https://github.com/Susanta2006/labbench]
+- **BloodSignal** (Hackathon project): An evidence-first blood-availability discovery concept from a hackathon with Team Pragmatrix. It separates what is known from what is stale or unknown. Caution: An information tool only. Availability is not guaranteed or real-time, so always confirm with the facility. It is not medical advice. [demo https://bloodsignal.vercel.app/; repo https://github.com/Susanta2006/BloodSignal]
 - **CodeWithFun Dev Hub** (Live): An online bookstore for developers and students, with technical books and study material at affordable prices. [demo https://codewithfun-devhub.vercel.app/]
 - **Fraud Detection** (Portfolio project): A TensorFlow/Keras deep neural network that classifies transactions as normal or fraudulent. [repo https://github.com/Susanta2006/Fraud-Detection]
 - **Emotion Detect** (Portfolio project): A computer-vision tool that estimates a face's emotion using OpenCV, DeepFace and TensorFlow. Caution: Outputs are model estimates, not facts about a person. [repo https://github.com/Susanta2006/emotion-detect]
@@ -25,7 +25,7 @@ This file is a concise, human-readable summary for language-model tools. It is n
 
 ## Research
 - Journal paper: "Emergent Social Consciousness in a Minimalist Conversational Agent: A Case Study on Jarvis — Observations from a Custom-Built Artificial Intelligence System", International Journal of Science and Research (IJSR), Vol. 14, Issue 12, December 2025, pp. 480–482. Paper ID: MR251206000138. https://dx.doi.org/10.21275/MR251206000138
-- Preprint: "Jarvis-v9: A Continual-Learning Synthetic AGI with Biologically-Inspired Generative Architecture, Persistent Memory, and Nine Cognitive Engines", ResearchGate, 2026. DOI: 10.13140/RG.2.2.12547.05921. https://doi.org/10.13140/RG.2.2.12547.05921
+- Preprint: "Jarvis-v9: A Continual-Learning Synthetic AGI Agent with Persistent Memory and Modular Cognitive Engines", ResearchGate, 2026. DOI: 10.13140/RG.2.2.12547.05921. https://doi.org/10.13140/RG.2.2.12547.05921
 
 ## Business
 - Shristi AI Web Creations™: A Udyam-registered sole-proprietorship micro enterprise providing software development, AI/ML solutions, web applications and related digital engineering services.

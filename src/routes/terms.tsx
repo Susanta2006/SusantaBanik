@@ -8,7 +8,8 @@ export const Route = createFileRoute("/terms")({
   head: () =>
     pageHead({
       title: `Terms & Conditions — ${SITE.name}`,
-      description: "Terms for using Susanta Banik’s portfolio website.",
+      description:
+        "Terms of use for the portfolio of Susanta Banik, AI/ML engineer and founder of Shristi AI Web Creations™: intellectual property, project status disclaimers, external links and contact.",
       path: "/terms",
     }),
 });
