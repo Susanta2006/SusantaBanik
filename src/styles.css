@@ -1,0 +1,477 @@
+@import "tailwindcss" source(none);
+@source "../src";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-cyan: var(--cyan);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-danger: var(--danger);
+  --font-sans:
+    "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Light: refined white and cool neutrals. All text pairs are >= 4.5:1. */
+:root {
+  color-scheme: light;
+  --bg: #f5f7fc;
+  --surface: #ffffff;
+  --surface-2: #edf1f9;
+  --line: #d9e0ee;
+  --fg: #0a1226;
+  --muted: #4a5875;
+  --accent: #1f5fe0;
+  --accent-fg: #ffffff;
+  --accent-soft: #e3ecff;
+  --cyan: #0a7f99;
+  --ok: #0f7a4a;
+  --warn: #8a5a00;
+  --danger: #b42318;
+  --glow: rgba(31, 95, 224, 0.16);
+}
+
+/* Dark: deep navy and near-black. */
+.dark {
+  color-scheme: dark;
+  --bg: #060b18;
+  --surface: #0b1428;
+  --surface-2: #101b35;
+  --line: #1d2b4d;
+  --fg: #e8eefb;
+  --muted: #9aa8c6;
+  --accent: #4a8dff;
+  --accent-fg: #04102a;
+  --accent-soft: #11224a;
+  --cyan: #38d0ec;
+  --ok: #4ade9a;
+  --warn: #f5c04a;
+  --danger: #ff8a80;
+  --glow: rgba(74, 141, 255, 0.28);
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-padding-top: 5rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+}
+
+@layer components {
+  .wrap {
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    .wrap {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .section {
+    padding-block: 4.5rem;
+  }
+  @media (min-width: 768px) {
+    .section {
+      padding-block: 6.5rem;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    transition:
+      background-color 0.15s,
+      border-color 0.15s,
+      filter 0.15s,
+      transform 0.15s;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+  .btn-primary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+  .btn:active {
+    transform: translateY(0);
+  }
+  .btn-ghost {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--fg);
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+  }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 1.1rem;
+    box-shadow:
+      0 1px 2px rgb(0 0 0 / 0.04),
+      0 8px 24px -12px rgb(10 18 38 / 0.12);
+    transition:
+      border-color 0.15s,
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+  .card:hover {
+    border-color: color-mix(in oklab, var(--accent) 55%, var(--line));
+    transform: translateY(-2px);
+    box-shadow:
+      0 1px 2px rgb(0 0 0 / 0.05),
+      0 16px 32px -14px color-mix(in oklab, var(--accent) 35%, transparent);
+  }
+  .dark .card {
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.03) inset,
+      0 12px 28px -16px rgb(0 0 0 / 0.6);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card:hover {
+      transform: none;
+    }
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    background: var(--surface-2);
+  }
+
+  .field {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.7rem;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--fg);
+    font-size: 0.95rem;
+  }
+  .field::placeholder {
+    color: var(--muted);
+    opacity: 0.8;
+  }
+  .field[aria-invalid="true"] {
+    border-color: var(--danger);
+  }
+
+  .text-link {
+    color: var(--accent);
+    text-underline-offset: 3px;
+  }
+  .text-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Carousel: native scrolling + snap. No library. */
+  .rail {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0.25rem 1.25rem 1.5rem;
+    margin-inline: -1.25rem;
+    scrollbar-width: thin;
+    overscroll-behavior-x: contain;
+    /* Positioned so visually-hidden (absolute) text inside cards is clipped here instead of widening the page. */
+    position: relative;
+    scroll-padding-inline: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    .rail {
+      padding-inline: 2.5rem;
+      margin-inline: -2.5rem;
+      scroll-padding-inline: 2.5rem;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .rail {
+      scroll-behavior: smooth;
+    }
+  }
+  .rail > li {
+    scroll-snap-align: start;
+    flex: 0 0 min(86vw, 22.5rem);
+  }
+
+  /* Reveal on scroll. Content stays visible without JavaScript: hiding only applies once the "js" class is set. */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.3s ease-out,
+      transform 0.3s ease-out;
+    transition-delay: var(--d, 0ms);
+    will-change: opacity, transform;
+  }
+  .js .reveal.in {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .hero-bg {
+    background:
+      radial-gradient(60rem 28rem at 78% 8%, var(--glow), transparent 70%),
+      radial-gradient(
+        40rem 20rem at 0% 0%,
+        color-mix(in oklab, var(--accent) 7%, transparent),
+        transparent 70%
+      );
+  }
+  .portrait-glow {
+    position: absolute;
+    inset: -12%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, var(--glow), transparent 72%);
+    pointer-events: none;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-2);
+  }
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--fg) 10%, transparent),
+      transparent
+    );
+    animation: shimmer 1.4s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    to {
+      transform: translateX(100%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer::after {
+      animation: none;
+      display: none;
+    }
+  }
+}
+
+/* Project card details: keep closed content out of layout and paint. */
+@layer components {
+  .project-details:not([open]) > div {
+    display: none;
+  }
+  .project-details > summary {
+    border-radius: 0.75rem;
+  }
+  .project-details > summary:focus-visible {
+    outline-offset: -2px;
+  }
+}
+
+/* ---------- Project viewer (one project at a time) ---------- */
+@layer components {
+  .viewer {
+    position: relative;
+  }
+
+  .viewer-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--fg);
+    transition:
+      border-color 0.15s,
+      color 0.15s,
+      transform 0.15s;
+  }
+  .viewer-nav:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .viewer-nav:active {
+    transform: scale(0.96);
+  }
+
+  .viewer-progress {
+    height: 2px;
+    background: var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .viewer-progress > span {
+    display: block;
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .viewer-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.6rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    transition:
+      border-color 0.15s,
+      color 0.15s,
+      background-color 0.15s;
+  }
+  .viewer-dot:hover {
+    color: var(--fg);
+    border-color: var(--accent);
+  }
+  .viewer-dot.is-active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-fg);
+  }
+
+  .viewer-stage {
+    animation: viewer-in 0.42s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes viewer-in {
+    from {
+      opacity: 0;
+      transform: translateX(calc(var(--dir, 1) * 28px));
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .viewer-stage > * {
+    animation: viewer-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .viewer-stage > :nth-child(2) {
+    animation-delay: 70ms;
+  }
+  @keyframes viewer-rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .viewer-cover {
+    transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .viewer-stage:hover .viewer-cover {
+    transform: scale(1.012);
+  }
+
+  .cover-fallback {
+    background-color: var(--surface-2);
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--fg) 9%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 18px 18px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .viewer-stage,
+    .viewer-stage > * {
+      animation: none;
+    }
+    .viewer-progress > span {
+      transition: none;
+    }
+    .viewer-cover {
+      transition: none;
+    }
+  }
+}
