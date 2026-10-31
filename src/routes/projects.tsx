@@ -3,9 +3,59 @@ import { GithubRepos } from "../components/GithubRepos.tsx";
 import { ProjectCard } from "../components/ProjectCard.tsx";
 import { Reveal } from "../components/Reveal.tsx";
 import { ARCHIVE } from "../data/archive.ts";
-import { PROJECTS } from "../data/projects.ts";
+import { PROJECTS, type Project } from "../data/projects.ts";
 import { SITE } from "../data/site.ts";
 import { IDS, abs, pageHead } from "../lib/seo.ts";
+
+/**
+ * Each project is placed in exactly one group, by its existing `id`. Projects
+ * with no verified facts to show (Boreal Basin, FSMN) stay off the grid and are
+ * covered in the archive notes. The test below fails if a project is missing or
+ * appears twice.
+ */
+const GROUP_IDS: Record<string, string[]> = {
+  products: ["labbench", "bloodsignal", "codewithfun-devhub"],
+  ml: ["fraud-detection", "emotion-detect", "ai-tutor-rag"],
+  "education-health": ["campuscopilot", "medical-ai"],
+  research: ["qnme-omega", "jarvis-v9"],
+};
+
+const pick = (ids: string[]): Project[] =>
+  ids
+    .map((id) => PROJECTS.find((p) => p.id === id))
+    .filter((p): p is Project => Boolean(p));
+
+const PROJECT_GROUPS: {
+  id: string;
+  title: string;
+  lead: string;
+  projects: Project[];
+}[] = [
+  {
+    id: "products",
+    title: "Products and applications",
+    lead: "Applications with a live demo or a public source repository.",
+    projects: pick(GROUP_IDS.products),
+  },
+  {
+    id: "ml",
+    title: "Machine learning and data science",
+    lead: "Models and experiments, each with its source on GitHub or its scope stated.",
+    projects: pick(GROUP_IDS.ml),
+  },
+  {
+    id: "education-health",
+    title: "Education and healthcare",
+    lead: "Learning tools and experimental decision-support work. Health work is not clinically validated.",
+    projects: pick(GROUP_IDS["education-health"]),
+  },
+  {
+    id: "research",
+    title: "Research and in-development work",
+    lead: "Investigations and products still in progress. Experimental, not production-ready.",
+    projects: pick(GROUP_IDS.research),
+  },
+];
 
 export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
@@ -48,14 +98,25 @@ function ProjectsPage() {
         </p>
       </Reveal>
 
-      <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS.map((p) => (
-          <li key={p.id}>
-            <ProjectCard project={p} headingLevel={2} />
-            <p className="mt-3 px-1 text-sm text-muted">{p.description}</p>
-          </li>
-        ))}
-      </ul>
+      {PROJECT_GROUPS.map((g) => (
+        <section
+          key={g.id}
+          aria-labelledby={`group-${g.id}`}
+          className="mt-16 first:mt-10"
+        >
+          <h2 id={`group-${g.id}`} className="text-2xl md:text-3xl">
+            {g.title}
+          </h2>
+          <p className="mt-2 max-w-2xl text-muted">{g.lead}</p>
+          <ul className="mt-6 grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {g.projects.map((p) => (
+              <li key={p.id} className="min-w-0">
+                <ProjectCard project={p} headingLevel={3} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
 
       <section aria-labelledby="gh-title" className="mt-20">
         <h2 id="gh-title" className="text-3xl">

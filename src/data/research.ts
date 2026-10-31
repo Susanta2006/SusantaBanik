@@ -5,6 +5,7 @@
 
 export type Publication = {
   id: string;
+  /** Published research, or a manuscript that has not been peer reviewed. */
   type: "Journal paper" | "Preprint";
   title: string;
   venue: string;
@@ -49,14 +50,14 @@ export const PUBLICATIONS: Publication[] = [
     id: "jarvis-v9-preprint",
     type: "Preprint",
     title:
-      "Jarvis-v9: A Continual-Learning Synthetic AGI with Biologically-Inspired Generative Architecture, Persistent Memory, and Nine Cognitive Engines",
+      "Jarvis-v9: A Continual-Learning Synthetic AGI Agent with Persistent Memory and Modular Cognitive Engines",
     venue: "ResearchGate",
     year: 2026,
     identifierLabel: "DOI",
     identifier: "10.13140/RG.2.2.12547.05921",
     doi: "10.13140/RG.2.2.12547.05921",
     summary:
-      "A preprint describing a continual-learning agent with persistent memory and nine cognitive engines. It has not been peer reviewed.",
+      "A preprint describing a modular, persistent-memory conversational architecture. It is a manuscript and has not been peer reviewed.",
     url: "https://www.researchgate.net/profile/Susanta-Banik-4/research",
     urlLabel: "Read on ResearchGate",
   },

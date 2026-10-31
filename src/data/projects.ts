@@ -89,15 +89,15 @@ export const PROJECTS: Project[] = [
     id: "labbench",
     name: "LabBench",
     summary:
-      "A zero-setup, browser-based coding workspace for students, with AI hints that explain errors instead of handing out answers.",
+      "A browser-based coding environment with AI-assisted teaching, designed for mobile-first learning.",
     description:
-      "LabBench is a lightweight, browser-based IDE and Progressive Web App for students. It combines a Monaco-powered editor, file explorer, interactive terminal, web preview and AI debugging hints in one workspace, so practical lab work can be done on budget phones or locked-down lab PCs. It was built around real lab-session friction: no personal laptop, restricted software installs and tedious output submission.",
+      "LabBench is a browser-based coding environment and Progressive Web App for learning to program. It provides an editor, file explorer, terminal and live preview in one workspace, with AI-assisted hints that aim to explain why code fails rather than supply the answer. The mobile-first design is meant to make practice possible on a phone or a shared machine, without a local development setup.",
     category: "Education",
     technologies: ["TypeScript", "Monaco Editor", "Supabase", "PWA"],
     highlights: [
       "Editor, file explorer, terminal and live preview in one workspace",
-      "AI hints explain why code fails rather than giving the fix",
-      "Installable as a standalone app on Android, iOS, Windows and macOS",
+      "AI-assisted hints focused on why code fails",
+      "Progressive Web App, usable from the browser with no local setup",
     ],
     status: "live",
     featured: true,
@@ -119,9 +119,9 @@ export const PROJECTS: Project[] = [
     id: "bloodsignal",
     name: "BloodSignal",
     summary:
-      "An evidence-aware blood-bank finder built for a hackathon by Team Pragmatrix. It shows what is known, what is stale and what still needs a phone call.",
+      "An evidence-first blood-availability discovery concept from a hackathon with Team Pragmatrix. It separates what is known from what is stale or unknown.",
     description:
-      "BloodSignal helps families and care teams organise a blood-bank search by blood group, component, quantity and location. Facility directory records and inventory evidence are kept as separate facts, so a listing is never mistaken for stock. Unknown, stale, unavailable and demo evidence are reported distinctly, results are ranked by evidence quality and freshness before distance, and every result points the user to call the facility to confirm. It was originally developed for the Ziro Hackathon by Susanta Banik and Shreya Bhattacharjee as Team Pragmatrix.",
+      "BloodSignal is a blood-availability discovery concept built as a hackathon project with Team Pragmatrix. Its design is evidence-first: facility directory records are kept separate from inventory evidence, and unknown, stale or unavailable information is shown as such rather than as zero stock. The intended workflow covers natural-language requests, prescription inputs, location matching and source-freshness checks. Not every part of that workflow is deployed; confirm current availability with the facility directly.",
     category: "Healthcare",
     technologies: [
       "React",
@@ -226,12 +226,12 @@ export const PROJECTS: Project[] = [
     summary:
       "Ongoing research into memory- and compute-conscious AI/ML workflows for resource-constrained hardware.",
     description:
-      "QNME-omega is an experimental engine investigating how AI/ML workloads can be trained and run more carefully within limited memory and compute, particularly on CPU-only or low-specification hardware. It is ongoing research. It is not presented as a proven or universal AI architecture, and no performance claims are made until benchmark data is published.",
+      "QNME-omega is an experimental architecture investigating memory-conscious and compute-conscious AI/ML workflows for resource-constrained hardware. It is ongoing research. It is not presented as a proven or universal AI architecture, and no benchmark results, speed improvements or memory savings are claimed until they are published.",
     category: "Research",
     tags: [
       "Memory-conscious AI",
       "Resource-constrained hardware",
-      "Experimental engine",
+      "Experimental architecture",
     ],
     status: "research",
     featured: false,
@@ -275,7 +275,7 @@ export const PROJECTS: Project[] = [
     summary:
       "An experimental decision-support project exploring symptom-based models and how to communicate their uncertainty.",
     description:
-      "An experimental decision-support project exploring symptom-based models, how to communicate uncertainty, model evaluation, robustness checks and human-reviewed deployment. It is a learning and research project.",
+      "An experimental decision-support project exploring symptom-based models. The work examines how to communicate model uncertainty, how to handle inputs the model does not match, how to evaluate performance and robustness, and how a human reviewer should stay in the loop. It is a learning and research project and has not been validated for clinical use.",
     category: "Healthcare",
     tags: [
       "Symptom-based models",

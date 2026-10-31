@@ -219,54 +219,98 @@ export function FounderSection() {
       aria-labelledby="founder-title"
       className="section border-t border-line bg-surface/50"
     >
-      <div className="wrap grid gap-12 lg:grid-cols-[1fr_1.1fr]">
+      <div className="wrap">
         <Reveal>
-          <p className="text-sm font-semibold text-accent">
-            {SITE.founderTitle}
+          <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+            Company
           </p>
           <h2 id="founder-title" className="mt-2 text-3xl md:text-4xl">
             {BUSINESS.name}
           </h2>
-          <p className="mt-5 text-lg text-muted">{BUSINESS.legalDescription}</p>
-          <p className="mt-4 text-muted">
-            The work centres on practical software engineering: AI/ML solutions,
-            LLM applications, web development and digital products — built to
-            solve a real problem and to be maintainable afterwards.
+          <p className="mt-3 text-lg font-semibold text-fg">
+            {BUSINESS.tagline}
           </p>
-          <p className="mt-4 flex items-center gap-2 text-sm text-muted">
-            <MapPin aria-hidden className="h-4 w-4" /> {BUSINESS.location}
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link to="/" hash="contact" className="btn btn-primary">
-              Start a conversation
-            </Link>
-            <a href={BUSINESS.linkedin} {...ext} className="btn btn-ghost">
-              Company on LinkedIn{" "}
-              <ArrowUpRight aria-hidden className="h-4 w-4" />
-              <span className="sr-only"> (opens in a new tab)</span>
-            </a>
-          </div>
         </Reveal>
 
-        <div className="grid gap-8">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.05fr_.95fr]">
+          <Reveal>
+            <p className="text-[1.05rem] leading-relaxed text-muted">
+              {BUSINESS.name} is the software and AI services business I run as{" "}
+              {SITE.founderTitle}. It takes on custom software development,
+              AI/ML solutions, LLM applications and pipelines,
+              retrieval-augmented generation (RAG) systems, agentic AI
+              workflows, full-stack web applications, and software and digital
+              product engineering.
+            </p>
+
+            <dl className="mt-8 grid gap-x-8 gap-y-5 text-sm sm:grid-cols-2">
+              <div>
+                <dt className="font-semibold text-muted">Founder</dt>
+                <dd className="mt-1 font-semibold">{SITE.name}</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-muted">Designation</dt>
+                <dd className="mt-1 font-semibold">{SITE.founderTitle}</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-muted">Business structure</dt>
+                <dd className="mt-1 font-semibold">{BUSINESS.structure}</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-muted">Registration</dt>
+                <dd className="mt-1 font-semibold">{BUSINESS.registration}</dd>
+              </div>
+              <div className="sm:col-span-2">
+                <dt className="font-semibold text-muted">
+                  Udyam registration number
+                </dt>
+                <dd className="mt-1 font-mono text-[.95rem] tracking-normal">
+                  {BUSINESS.udyam}
+                </dd>
+              </div>
+              <div className="sm:col-span-2">
+                <dt className="font-semibold text-muted">Location</dt>
+                <dd className="mt-1 flex items-center gap-2 font-semibold">
+                  <MapPin aria-hidden className="h-4 w-4 text-accent" />
+                  {BUSINESS.location}
+                </dd>
+              </div>
+            </dl>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a href={BUSINESS.linkedin} {...ext} className="btn btn-primary">
+                Company page on LinkedIn
+                <ArrowUpRight aria-hidden className="h-4 w-4" />
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <Link to="/" hash="contact" className="btn btn-ghost">
+                Discuss a project
+              </Link>
+            </div>
+            <p className="mt-5 text-sm text-muted">
+              Personal profile and public work are on the home page; this block
+              describes the business only.
+            </p>
+          </Reveal>
+
           <Reveal delay={60}>
-            <h3 className="mb-4 text-xl">How I work</h3>
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {BUSINESS.principles.map((p) => (
-                <li key={p.title} className="panel p-5">
-                  <p className="font-bold">{p.title}</p>
-                  <p className="mt-1.5 text-[.95rem] text-muted">{p.body}</p>
+            <h3 className="text-xl">Focus</h3>
+            <ul className="mt-4 divide-y divide-line rounded-2xl border border-line bg-surface">
+              {BUSINESS.focus.map((f) => (
+                <li key={f} className="px-5 py-3.5 text-[.95rem]">
+                  {f}
                 </li>
               ))}
             </ul>
-          </Reveal>
-          <Reveal delay={120}>
-            <h3 className="mb-4 text-xl">What I can build</h3>
-            <ul className="divide-y divide-line rounded-2xl border border-line bg-surface">
-              {SERVICES.map((s) => (
-                <li key={s.id} className="p-5">
-                  <p className="font-bold">{s.title}</p>
-                  <p className="mt-1 text-[.95rem] text-muted">{s.body}</p>
+
+            <h3 className="mb-4 mt-9 text-xl">How the work is done</h3>
+            <ul className="grid gap-4">
+              {BUSINESS.principles.map((p) => (
+                <li key={p.title} className="panel p-5">
+                  <p className="font-bold">{p.title}</p>
+                  <p className="mt-1.5 text-[.95rem] leading-relaxed text-muted">
+                    {p.body}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -346,87 +390,83 @@ export function AboutSection() {
         <Reveal>
           <Heading
             id="about-title"
-            title="About me"
-            lead="A little more about the person and the work behind the projects."
+            title="About"
+            lead="How I approach engineering, research and the trade-offs I care about."
           />
         </Reveal>
 
         <div className="grid gap-12 lg:grid-cols-[1.15fr_.85fr]">
           <Reveal>
-            <h3 className="mb-3 text-xl text-fg">Who I am</h3>
+            <h3 className="mb-3 text-xl text-fg">Engineering approach</h3>
             <div className={prose}>
               <p>
-                I’m Susanta Banik, an AI/ML engineer and full-stack developer
-                from Agartala, Tripura. I’m studying B.Tech in AI and Data
-                Science at Techno College of Engineering Agartala and the online
-                B.S. in Applied AI and Data Science at IIT Jodhpur, and I build
-                and ship software alongside my degrees. I’m the founder of
-                Shristi AI Web Creations™, through which I take on software and
-                AI work.
+                I start from the problem a person actually has and work
+                backwards to the smallest system that solves it. That usually
+                means a clear data model, an interface someone can use without
+                instructions, and documentation that lets the next engineer take
+                over. I would rather ship something modest that is honest about
+                its limits than something impressive that nobody can maintain.
               </p>
             </div>
 
-            <h3 className="mb-3 mt-9 text-xl text-fg">What I build</h3>
+            <h3 className="mb-3 mt-9 text-xl text-fg">Practical AI systems</h3>
             <div className={prose}>
               <p>
-                I like problems with a real user attached. LabBench is a
-                zero-setup coding workspace for students who lack a laptop or
-                are locked out of lab PCs. BloodSignal, built with Shreya
-                Bhattacharjee as Team Pragmatrix, helps families find blood
-                banks while being strict about what is known and what still
-                needs a phone call. CodeWithFun Dev Hub is an affordable
-                bookstore for developers and students. On the machine-learning
-                side there are public projects in fraud detection and computer
-                vision, and CampusCopilot, a study platform for higher-education
-                and competitive-exam students, is in development.
+                I am most interested in AI that does a job inside a real
+                workflow: retrieving the right source, explaining a result, or
+                asking for help when it is uncertain. That is why I treat
+                evaluation, failure cases and missing data as part of the design
+                rather than an afterthought.
               </p>
             </div>
 
-            <h3 className="mb-3 mt-9 text-xl text-fg">How I work</h3>
+            <h3 className="mb-3 mt-9 text-xl text-fg">Research philosophy</h3>
             <div className={prose}>
               <p>
-                I start from the problem, choose the smallest technology that
-                solves it, and write down honestly where each project stands. If
-                a number is unknown, I say it is unknown. That habit comes from
-                BloodSignal, where treating missing stock as zero could mislead
-                someone in an emergency, and it is why every project here
-                carries a status label.
+                My research asks what conversational and learning systems can do
+                with limited memory and compute, and what they should not be
+                trusted to claim. I publish what I can support and label
+                everything else as in progress.
               </p>
             </div>
 
-            <h3 className="mb-3 mt-9 text-xl text-fg">Research</h3>
+            <h3 className="mb-3 mt-9 text-xl text-fg">
+              Resource-efficient computing
+            </h3>
             <div className={prose}>
               <p>
-                My independent research is on conversational agents and
-                memory-conscious AI. A case study on the Jarvis agent is
-                published in the International Journal of Science and Research,
-                and the Jarvis-v9 preprint is on ResearchGate. QNME-omega, an
-                engine for training and running models on modest hardware, is
-                still experimental, with no published results yet.
+                Many useful tools are built for people on modest phones, shared
+                lab machines and slow connections. I think about memory use,
+                startup cost and offline behaviour early, because those limits
+                decide who can actually use the software.
               </p>
             </div>
 
-            <h3 className="mb-3 mt-9 text-xl text-fg">Beyond the code</h3>
+            <h3 className="mb-3 mt-9 text-xl text-fg">How the work is split</h3>
             <div className={prose}>
               <p>
-                I run CodeWithFun, a YouTube channel and bookstore for students,
-                write about what I learn on DEV Community and Medium, and
-                practise problem solving on LeetCode and HackerRank.
+                Independent development and research happen alongside
+                client-oriented work through Shristi AI Web Creations™. The
+                personal portfolio covers my own projects and studies; the
+                company covers services and commissioned work.
               </p>
             </div>
+          </Reveal>
 
-            <h3 className="mb-3 mt-10 text-xl text-fg">Education</h3>
-            <ul className="grid gap-3 sm:grid-cols-2">
+          <Reveal delay={60}>
+            <h3 className="mb-3 text-xl text-fg">Education</h3>
+            <ul className="grid gap-3">
               {EDUCATION.map((e) => (
                 <li key={e.id} className="panel flex gap-3 p-4">
                   <GraduationCap
                     aria-hidden
                     className="mt-1 h-5 w-5 shrink-0 text-accent"
                   />
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-bold leading-snug">{e.degree}</p>
-                    <p className="text-sm text-muted">
-                      {e.institution} · {e.status}
+                    <p className="mt-1 text-sm text-muted">{e.institution}</p>
+                    <p className="mt-1 text-sm font-semibold text-accent">
+                      {e.status}
                     </p>
                   </div>
                 </li>
@@ -436,33 +476,31 @@ export function AboutSection() {
             <h3 className="mb-3 mt-9 text-xl text-fg">Internships</h3>
             <ul className="divide-y divide-line rounded-2xl border border-line bg-surface">
               {EXPERIENCE.map((x) => (
-                <li
-                  key={x.id}
-                  className="flex flex-col px-4 py-3 sm:flex-row sm:justify-between"
-                >
+                <li key={x.id} className="flex flex-col gap-0.5 px-4 py-3">
                   <span className="font-semibold">{x.role}</span>
-                  <span className="text-muted">{x.org}</span>
+                  <span className="text-sm text-muted">{x.org}</span>
                 </li>
               ))}
             </ul>
-          </Reveal>
 
-          <Reveal delay={60}>
-            <h3 className="mb-4 text-xl">Skills and tools</h3>
-            <div className="grid gap-4">
-              {SKILLS.map((g) => (
-                <div key={g.group} className="panel p-4">
-                  <p className="mb-2 text-sm font-bold">{g.group}</p>
-                  <ul className="flex flex-wrap gap-1.5">
-                    {g.items.map((i) => (
-                      <li key={i} className="chip">
-                        {i}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div className="mt-9">
+              <h3 className="mb-3 text-xl text-fg">Skills</h3>
+              <div className="grid gap-4">
+                {SKILLS.map((g) => (
+                  <div key={g.group} className="panel p-4">
+                    <p className="mb-2 text-sm font-bold">{g.group}</p>
+                    <ul className="flex flex-wrap gap-1.5">
+                      {g.items.map((i) => (
+                        <li key={i} className="chip">
+                          {i}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
+
             <details className="panel mt-6 p-4">
               <summary className="cursor-pointer font-bold">
                 Selected certifications
@@ -479,14 +517,12 @@ export function AboutSection() {
           </Reveal>
         </div>
 
-        {/* The LinkedIn link sits below the full About text. */}
         <Reveal className="mt-14">
           <div className="card flex flex-col items-start justify-between gap-5 p-6 sm:flex-row sm:items-center">
             <div>
-              <h3 className="text-xl">Read my full professional profile</h3>
+              <h3 className="text-xl">Personal professional profile</h3>
               <p className="mt-1 text-muted">
-                Experience, certifications, recommendations and updates are on
-                LinkedIn.
+                Experience, certifications and updates are on LinkedIn.
               </p>
             </div>
             <a

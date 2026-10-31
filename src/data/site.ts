@@ -20,7 +20,6 @@ export const SITE = {
   roles: [
     "AI/ML Engineer",
     "Full-Stack Developer",
-    "Founder",
     "Independent AI Researcher",
   ],
   founderTitle: "Founder & Principal AI Engineer",
@@ -40,6 +39,12 @@ export const SITE = {
 export const BUSINESS = {
   name: "Shristi AI Web Creations™",
   plainName: "Shristi AI Web Creations",
+  /** Company tagline. Distinct from the personal tagline; never interchange the two. */
+  tagline: "Building Intelligence. Shaping Tomorrow.",
+  /** Sole proprietorship, as registered. */
+  structure: "Sole proprietorship",
+  registration: "Udyam-registered Micro Enterprise",
+  udyam: "UDYAM-TR-08-0041945",
   /** Never describe this as a private limited company. */
   legalDescription:
     "A Udyam-registered sole-proprietorship micro enterprise providing software development, AI/ML solutions, web applications and related digital engineering services.",
@@ -47,10 +52,13 @@ export const BUSINESS = {
   linkedin: "https://www.linkedin.com/company/shristi-ai-web-creations/",
   website: "https://susanta-banik.vercel.app/",
   focus: [
-    "Practical software engineering",
-    "AI/ML solutions and LLM applications",
-    "Web development",
-    "Digital products",
+    "Custom software development",
+    "AI/ML solutions",
+    "LLM applications and pipelines",
+    "RAG systems",
+    "Agentic AI workflows",
+    "Full-stack web applications",
+    "Software and digital product engineering",
   ],
   principles: [
     {
@@ -241,7 +249,7 @@ export const EDUCATION = [
 
 /** Internships exactly as listed on the previous site. */
 export const EXPERIENCE = [
-  { id: "kyma", role: "AI & RAG Development Intern", org: "Kyma AI Innovations" },
+  { id: "kyma", role: "AI/ML Engineer Intern", org: "Kyma AI Innovations" },
   {
     id: "unified",
     role: "Full-Stack Web Developer Intern",
@@ -258,48 +266,54 @@ export const EXPERIENCE = [
 
 export const SKILLS = [
   {
-    group: "AI and ML",
+    group: "Programming languages",
+    items: ["Python", "Java", "JavaScript", "PHP", "SQL"],
+  },
+  {
+    group: "AI and machine learning",
     items: [
+      "Machine learning",
+      "Deep learning",
+      "NLP",
+      "Computer vision",
       "TensorFlow",
       "Keras",
       "Scikit-learn",
-      "Deep learning",
-      "Model evaluation",
-      "RAG",
-      "LLM agents",
-      "Prompt engineering",
     ],
   },
   {
-    group: "Data",
+    group: "Data science",
     items: [
       "Pandas",
       "NumPy",
-      "Matplotlib",
-      "Power BI",
-      "Tableau",
-      "Statistical modelling",
+      "Data analytics",
+      "Model evaluation",
+      "Predictive analytics",
     ],
   },
   {
-    group: "Languages",
-    items: ["Python", "JavaScript", "TypeScript", "Java", "C", "C++", "PHP"],
-  },
-  {
-    group: "Web",
-    items: ["React", "Tailwind CSS", "REST APIs", "MySQL", "PWA"],
-  },
-  {
-    group: "Tools",
+    group: "LLM and intelligent systems",
     items: [
-      "Git",
-      "GitHub",
-      "Linux",
-      "Jupyter",
-      "Google Colab",
-      "AWS",
-      "Heroku",
+      "LLMs",
+      "Retrieval-augmented generation",
+      "Embeddings",
+      "Conversational agents",
+      "AI integrations",
     ],
+  },
+  {
+    group: "Web and backend",
+    items: [
+      "React",
+      "REST APIs",
+      "Full-stack development",
+      "MySQL",
+      "Database systems",
+    ],
+  },
+  {
+    group: "Tools and infrastructure",
+    items: ["Git"],
   },
 ] as const;
 

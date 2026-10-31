@@ -40,80 +40,75 @@ const link =
 
 function ResearchPage() {
   const profiles = PROFILES.filter((p) => p.group === "research");
+  const published = PUBLICATIONS.filter((p) => p.type === "Journal paper");
+  const preprints = PUBLICATIONS.filter((p) => p.type === "Preprint");
   return (
     <div className="wrap section">
       <Reveal>
         <h1 className="text-4xl md:text-5xl">Research</h1>
         <p className="mt-4 max-w-2xl text-lg text-muted">
-          Independent research on conversational agents and memory-conscious AI.
-          The journal paper is published; the preprint has not been peer
-          reviewed.
+          What I have investigated, documented and published. Built projects are
+          on the Projects page.
         </p>
       </Reveal>
 
-      <ul className="mt-10 grid gap-6">
-        {PUBLICATIONS.map((p, i) => (
-          <Reveal
-            as="li"
-            key={p.id}
-            delay={i * 60}
-            className="panel p-6 md:p-8"
-          >
-            <p className="text-sm font-semibold text-accent">
-              {p.type} · {p.year}
+      <Reveal className="mt-12">
+        <h2 className="text-2xl">Published research</h2>
+        <p className="mt-2 max-w-2xl text-muted">
+          Peer-reviewed or journal-published work.
+        </p>
+        <ul className="mt-6 grid gap-6">
+          {published.map((p) => (
+            <PubCard key={p.id} p={p} />
+          ))}
+        </ul>
+      </Reveal>
+
+      <Reveal className="mt-14">
+        <h2 className="text-2xl">Preprints and manuscripts</h2>
+        <p className="mt-2 max-w-2xl text-muted">
+          Shared before peer review. Not peer reviewed; findings may change.
+        </p>
+        <ul className="mt-6 grid gap-6">
+          {preprints.map((p) => (
+            <PubCard key={p.id} p={p} />
+          ))}
+        </ul>
+      </Reveal>
+
+      <Reveal className="mt-14">
+        <h2 className="text-2xl">Independent research directions</h2>
+        <p className="mt-2 max-w-2xl text-muted">
+          Ongoing questions without a published result yet.
+        </p>
+        <ul className="mt-6 grid gap-4 md:grid-cols-2">
+          <li className="panel p-6">
+            <p className="text-sm font-semibold text-cyan">In progress</p>
+            <h3 className="mt-2 text-lg">
+              Memory-conscious and compute-conscious AI
+            </h3>
+            <p className="mt-2 text-muted">
+              Experimental architecture (QNME-omega) for AI/ML workflows on
+              resource-constrained hardware. No benchmark results are published.
             </p>
-            <h2 className="mt-2 text-2xl leading-snug md:text-3xl">
-              {p.title}
-            </h2>
-            <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-3">
-              <div>
-                <dt className="font-semibold text-muted">Venue</dt>
-                <dd className="mt-1">
-                  {p.venue}
-                  {p.detail ? `, ${p.detail}` : ""}
-                </dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-muted">
-                  {p.identifierLabel}
-                </dt>
-                <dd className="mt-1 break-all">{p.identifier}</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-muted">Author</dt>
-                <dd className="mt-1">{SITE.name}</dd>
-              </div>
-            </dl>
-            <p className="mt-5 max-w-3xl text-muted">{p.summary}</p>
-            <div className="mt-4 flex flex-wrap gap-x-6">
-              <a href={p.url} {...ext} className={link}>
-                {p.urlLabel} <ArrowUpRight aria-hidden className="h-4 w-4" />
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-              {p.doi && (
-                <a href={doiUrl(p.doi)} {...ext} className={link}>
-                  DOI link <ArrowUpRight aria-hidden className="h-4 w-4" />
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              )}
-              {p.alsoOn?.map((a) => (
-                <a key={a.href} href={a.href} {...ext} className={link}>
-                  Also on {a.label}{" "}
-                  <ArrowUpRight aria-hidden className="h-4 w-4" />
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              ))}
-            </div>
-          </Reveal>
-        ))}
-      </ul>
+          </li>
+          <li className="panel p-6">
+            <p className="text-sm font-semibold text-cyan">In progress</p>
+            <h3 className="mt-2 text-lg">
+              Conversational agents with persistent memory
+            </h3>
+            <p className="mt-2 text-muted">
+              Follow-up work to the Jarvis case study and preprint, examining
+              modular architecture and what memory changes in agent behaviour.
+            </p>
+          </li>
+        </ul>
+      </Reveal>
 
       <Reveal className="mt-14">
         <h2 className="text-2xl">Follow the work</h2>
         <p className="mt-2 max-w-2xl text-muted">
-          New preprints are posted on ResearchGate first. Memory-conscious AI
-          work such as QNME-omega is still in progress and has no published
-          results yet.
+          Preprints are posted on ResearchGate first.
         </p>
         <ul className="mt-4 flex flex-wrap gap-x-6">
           {profiles.map((p) => (
@@ -132,5 +127,52 @@ function ResearchPage() {
         </ul>
       </Reveal>
     </div>
+  );
+}
+
+function PubCard({ p }: { p: (typeof PUBLICATIONS)[number] }) {
+  return (
+    <li className="panel p-6 md:p-8">
+      <p className="text-sm font-semibold text-accent">
+        {p.type} · {p.year}
+      </p>
+      <h3 className="mt-2 text-2xl leading-snug md:text-[1.7rem]">{p.title}</h3>
+      <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-3">
+        <div>
+          <dt className="font-semibold text-muted">Venue</dt>
+          <dd className="mt-1">
+            {p.venue}
+            {p.detail ? `, ${p.detail}` : ""}
+          </dd>
+        </div>
+        <div>
+          <dt className="font-semibold text-muted">{p.identifierLabel}</dt>
+          <dd className="mt-1 break-all">{p.identifier}</dd>
+        </div>
+        <div>
+          <dt className="font-semibold text-muted">Author</dt>
+          <dd className="mt-1">{SITE.name}</dd>
+        </div>
+      </dl>
+      <p className="mt-5 max-w-3xl text-muted">{p.summary}</p>
+      <div className="mt-4 flex flex-wrap gap-x-6">
+        <a href={p.url} {...ext} className={link}>
+          {p.urlLabel} <ArrowUpRight aria-hidden className="h-4 w-4" />
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
+        {p.doi && (
+          <a href={doiUrl(p.doi)} {...ext} className={link}>
+            DOI link <ArrowUpRight aria-hidden className="h-4 w-4" />
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        )}
+        {p.alsoOn?.map((a) => (
+          <a key={a.href} href={a.href} {...ext} className={link}>
+            Also on {a.label} <ArrowUpRight aria-hidden className="h-4 w-4" />
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        ))}
+      </div>
+    </li>
   );
 }

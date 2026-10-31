@@ -1,16 +1,16 @@
 import {
   ArrowUpRight,
   BookOpen,
-  Briefcase,
   Brain,
+  Briefcase,
   ChevronDown,
   CircleAlert,
   Droplets,
   FileText,
   FlaskConical,
   Github,
-  Globe,
   GraduationCap,
+  Globe,
   ScanFace,
   ShieldAlert,
   Stethoscope,
@@ -35,6 +35,7 @@ const ICONS: Record<string, LucideIcon> = {
   "fraud-detection": ShieldAlert,
   "emotion-detect": ScanFace,
 };
+
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
   "AI / ML": Brain,
   Research: FlaskConical,
@@ -57,7 +58,10 @@ const DOT: Record<ProjectStatus, string> = {
 export function StatusBadge({ status }: { status: ProjectStatus }) {
   return (
     <span className="chip">
-      <span aria-hidden className={`h-2 w-2 rounded-full ${DOT[status]}`} />
+      <span
+        aria-hidden
+        className={`h-2 w-2 shrink-0 rounded-full ${DOT[status]}`}
+      />
       {STATUS_LABEL[status]}
     </span>
   );
@@ -97,7 +101,12 @@ const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 const primary = "btn btn-primary min-h-10 px-4 py-2 text-sm";
 const ghost = "btn btn-ghost min-h-10 px-4 py-2 text-sm";
 
-/** One project, as a card. The summary is always visible; "Details" reveals the fuller, verified description. */
+/**
+ * One project card. The summary is always visible. "Details" uses the native
+ * <details> element; its content lives in a single wrapper that the browser
+ * hides when the panel is closed (via content-visibility on the wrapper slot),
+ * so closed text never paints outside the card.
+ */
 export function ProjectCard({
   project: p,
   headingLevel = 3,
@@ -108,39 +117,54 @@ export function ProjectCard({
   const H = `h${headingLevel}` as "h2" | "h3";
   const note = repositoryNote(p);
   const tech = p.technologies ?? p.tags ?? [];
+  const hasLinks = Boolean(
+    p.demoUrl || p.repositoryUrl || p.publicationUrl || p.documentationUrl,
+  );
+
   return (
-    <article id={p.id} className="card flex h-full flex-col gap-4 p-4">
+    <article
+      id={p.id}
+      className="card flex h-full min-w-0 flex-col gap-4 p-4 sm:p-5"
+    >
       <Cover project={p} />
-      <div className="flex flex-wrap items-center gap-2">
+
+      <div className="flex min-w-0 flex-wrap items-center gap-2">
         <StatusBadge status={p.status} />
-        <span className="text-xs font-medium text-muted">{p.category}</span>
+        <span className="min-w-0 text-xs font-medium text-muted">
+          {p.category}
+        </span>
       </div>
-      <div>
-        <H className="text-xl">{p.name}</H>
-        <p className="mt-2 text-[.95rem] text-muted">{p.summary}</p>
+
+      <div className="min-w-0">
+        <H className="break-words text-xl leading-tight">{p.name}</H>
+        <p className="mt-2 break-words text-[.95rem] leading-relaxed text-muted">
+          {p.summary}
+        </p>
       </div>
 
       {p.caution && (
-        <p className="flex gap-2 text-sm text-warn">
+        <p className="flex min-w-0 gap-2 text-sm leading-relaxed text-warn">
           <CircleAlert aria-hidden className="mt-0.5 h-4 w-4 shrink-0" />
-          <span>{p.caution}</span>
+          <span className="min-w-0 break-words">{p.caution}</span>
         </p>
       )}
 
-      <details className="group rounded-xl border border-line bg-surface-2/60 px-3.5 py-2.5 text-sm">
-        <summary className="flex min-h-8 cursor-pointer list-none items-center justify-between gap-2 font-semibold">
-          Details
+      <details className="project-details group min-w-0 rounded-xl border border-line bg-surface-2/60 text-sm">
+        <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-3.5 font-semibold">
+          <span>Details</span>
           <ChevronDown
             aria-hidden
-            className="h-4 w-4 transition-transform duration-150 group-open:rotate-180"
+            className="h-4 w-4 shrink-0 transition-transform duration-150 group-open:rotate-180"
           />
         </summary>
-        <div className="mt-2 space-y-3 pb-1 text-muted">
-          <p>{p.description}</p>
+        <div className="space-y-3 border-t border-line px-3.5 py-3 leading-relaxed text-muted">
+          <p className="break-words">{p.description}</p>
           {p.highlights && (
-            <ul className="list-disc space-y-1 pl-5">
+            <ul className="list-disc space-y-1.5 pl-5">
               {p.highlights.map((h) => (
-                <li key={h}>{h}</li>
+                <li key={h} className="break-words">
+                  {h}
+                </li>
               ))}
             </ul>
           )}
@@ -150,18 +174,18 @@ export function ProjectCard({
               aria-label={p.technologies ? "Technologies" : "Topics"}
             >
               {tech.map((c) => (
-                <li key={c} className="chip">
+                <li key={c} className="chip max-w-full break-words">
                   {c}
                 </li>
               ))}
             </ul>
           )}
-          {p.context && <p>{p.context}.</p>}
-          {p.sourceNote && <p>{p.sourceNote}</p>}
+          {p.context && <p className="break-words">{p.context}.</p>}
+          {p.sourceNote && <p className="break-words">{p.sourceNote}</p>}
         </div>
       </details>
 
-      <div className="mt-auto flex flex-wrap items-center gap-2 border-t border-line pt-4">
+      <div className="mt-auto flex min-w-0 flex-wrap items-center gap-2 border-t border-line pt-4">
         {p.demoUrl && (
           <a href={p.demoUrl} {...ext} className={primary}>
             Live demo <ArrowUpRight aria-hidden className="h-4 w-4" />
@@ -197,17 +221,13 @@ export function ProjectCard({
           </a>
         )}
         {note && <span className="text-sm text-muted">{note}</span>}
-        {!p.demoUrl &&
-          !p.repositoryUrl &&
-          !p.publicationUrl &&
-          !p.documentationUrl &&
-          !note && (
-            <span className="text-sm text-muted">
-              {p.visibility === "on-request"
-                ? "Details on request"
-                : "No public links yet"}
-            </span>
-          )}
+        {!hasLinks && !note && (
+          <span className="text-sm text-muted">
+            {p.visibility === "on-request"
+              ? "Details on request"
+              : "No public links yet"}
+          </span>
+        )}
       </div>
     </article>
   );
