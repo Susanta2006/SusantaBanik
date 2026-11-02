@@ -17,7 +17,7 @@ import { IDS, abs, pageHead } from "../lib/seo.ts";
  * appears twice.
  */
 const GROUP_IDS: Record<string, string[]> = {
-  products: ["labbench", "bloodsignal", "codewithfun-devhub"],
+  products: ["labbench", "workmanager", "bloodsignal", "codewithfun-devhub"],
   ml: ["fraud-detection", "emotion-detect", "ai-tutor-rag"],
   "education-health": ["campuscopilot", "medical-ai"],
   research: ["qnme-omega", "jarvis-v9"],
