@@ -165,7 +165,6 @@ export const PROJECTS: Project[] = [
       "Typed requests, optional voice input and prescription-assisted fields, reviewed before searching",
       "Call-to-confirm and map links; distance is labelled straight-line",
     ],
-    category: "Web",
     status: "hackathon",
     featured: true,
     image: {
