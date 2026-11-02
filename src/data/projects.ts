@@ -27,7 +27,7 @@ export type ProjectStatus =
   | "project";
 
 export type ProjectCategory =
-  "AI / ML" | "Research" | "Education" | "Healthcare" | "Web" | "Client work";
+  "AI / ML" | "Research" | "Education" | "Healthcare" | "Web" | "Client work" | "Business software";
 
 export type Visibility = "public" | "private" | "on-request";
 
