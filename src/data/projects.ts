@@ -116,6 +116,36 @@ export const PROJECTS: Project[] = [
       "GitHub repository page and README (public repo; live URL listed under About). Liveness of the Vercel URL not machine-checked.",
   },
   {
+    id: "workmanager",
+    name: "WorkManager",
+    summary:
+      "A business workspace for clients, projects, tasks, invoices, payments, expenses and team access.",
+    description:
+      "WorkManager is a business workspace for small companies and agencies. It replaces the spreadsheets, separate invoicing tools and chat threads that teams use to run their work. Clients, projects, deadlines, invoices, payments and expenses are kept in one place, and the dashboard shows the owner the current state of the business. Each company runs its own installation, so its data stays in its own database.",
+    category: "Business software",
+    technologies: ["TypeScript", "React", "TanStack Start", "Tailwind CSS", "Supabase", "PostgreSQL", "PWA"],
+    highlights: [
+      "Clients, projects and tasks linked to one client record, with automatic client codes and invoice numbers",
+      "Invoices and quotations, with payments recorded against them and outstanding balances updated automatically",
+      "Progressive Web App, dashboard with revenue, expenses, net profit and team activity, plus an activity log and an approval process for new team members",
+    ],
+    status: "live",
+    featured: true,
+    image: {
+      base: "/images/projects/workmanager",
+      width: 1000,
+      height: 545,
+      alt: "Dashboard with revenue, expenses, net profit and team activity, plus an activity log and an approval process for new team members",
+    },
+    demoUrl: "https://getworkmanager.vercel.app/",
+    repositoryUrl: "https://github.com/Susanta2006/workmanager",
+    sourceNote:
+      "Source is public for review; the software is proprietary, all rights reserved.",
+    visibility: "public",
+    provenance:
+      "GitHub repository page and README (public repo; live URL listed under About). Liveness of the Vercel URL not machine-checked.",
+  },
+  {
     id: "bloodsignal",
     name: "BloodSignal",
     summary:
@@ -135,8 +165,15 @@ export const PROJECTS: Project[] = [
       "Typed requests, optional voice input and prescription-assisted fields, reviewed before searching",
       "Call-to-confirm and map links; distance is labelled straight-line",
     ],
+    category: "Web",
     status: "hackathon",
     featured: true,
+    image: {
+      base: "/images/projects/bloodsignal",
+      width: 1000,
+      height: 588,
+      alt: "Bloodsignal white UI with red header",
+    },
     demoUrl: "https://bloodsignal.vercel.app/",
     repositoryUrl: "https://github.com/Susanta2006/BloodSignal",
     visibility: "public",
